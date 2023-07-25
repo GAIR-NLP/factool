@@ -1,0 +1,119 @@
+openapi: 3.0.1
+info:
+  title: factool
+  description: A plugin for fact checking. You can verify the factuality of a sentence, a paragraph, a math solution, or a code snippet.
+  version: 'v1'
+servers:
+  - url: http://localhost:5003
+paths:
+  /fact_check_kbqa:
+    post:
+      operationId: fact_check_kbqa
+      summary: Fact-check a given passage or a sentence on the knowledge provided.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FactCheckRequest'
+      responses:
+        '200':
+          description: Fact-check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactCheckResponse'
+  /fact_check_code:
+    post:
+      operationId: fact_check_code
+      summary: Fact-check the correctness of code generation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FactCheckRequest'
+      responses:
+        '200':
+          description: Fact-check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactCheckResponse'
+  /fact_check_math:
+    post:
+      operationId: fact_check_math
+      summary: Fact-check the math calculations in mathematical reasoning.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FactCheckRequest'
+      responses:
+        '200':
+          description: Fact-check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactCheckResponse'
+  /fact_check_scientific_literature:
+    post:
+      operationId: fact_check_scientific_literature
+      summary: Fact-check the existence of scientfic literatures mentioned in the given passage or sentence.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FactCheckRequest'
+      responses:
+        '200':
+          description: Fact-check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactCheckResponse'
+  /fact_check/{fact_check_id}:
+    get:
+      operationId: get_fact_check
+      summary: Retrieve a previous fact check result.
+      parameters:
+        - in: path
+          name: fact_check_id
+          schema:
+            type: integer
+          required: true
+          description: The ID of the fact check result to retrieve.
+      responses:
+        '200':
+          description: Fact-check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FactCheckResponse'
+        '404':
+          description: Fact check not found.
+
+components:
+  schemas:
+    FactCheckRequest:
+      type: object
+      properties:
+        prompt:
+          type: string
+          description: (REQUIRED) The user prompt that requested a response (i.e., the user prompt that request the ChatGPT response to be fact-checked.)
+        response:
+          type: string
+          description: (REQUIRED) The response to be fact-checked (usually a ChatGPT response). (VERY IMPORTANT) HOWEVER, if the user directly asks you to fact-check a knowledge-based statement, then the response should be same as the prompt.
+        entry_point:
+          type: ["string", "null"]
+          description: The function name of the code snippet to be fact-checked in the response. Could be "null" if the response doesn't contain any code snippet.
+    FactCheckResponse:
+      type: object
+      properties:
+        fact_check_result:
+          type: array
+          items:
+            type: object
+          description: The list of fact-check results as dictionaries. This list includes claims extracted from the response, claim-level_factuality and response-level factuality of the response, and potentially the descriptions of why each claim in the response is factual or not.

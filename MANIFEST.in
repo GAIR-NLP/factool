@@ -1,0 +1,3 @@
+recursive-include factool/utils *
+include factool/datasets/knowledge_qa/knowledge_QA.json
+include factool/datasets/scientific/scientific.json

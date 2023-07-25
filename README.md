@@ -18,6 +18,8 @@ Demo of Knowledge-based QA:
 
 ![Alt Text](./figs/factool_plugin_kbqa.gif)
 
+![Alt Text](./figs/factool_plugin_kbqa2.gif)
+
 
 ## Installation
 

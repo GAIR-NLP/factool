@@ -13,7 +13,7 @@ knowledge_qa:
     You should only respond in format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{{'.
     [response format]: 
     {{
-      "reasoning": "Why is the given text factual or non-factual? Be careful when you said something is non-factual. When you said something is non-factual, you must provide mulitple evidences to support your decision.",
+      "reasoning": "Why is the given text factual or non-factual? Be careful when you said something is non-factual. When you said something is non-factual, you must provide multiple evidences to support your decision.",
       "error": "None if the text is factual; otherwise, describe the error.",
       "correction": "The corrected text if there is an error.",
       "factuality": True if the given text is factual, False otherwise.

@@ -512,6 +512,10 @@ In this case, you will get:
 <details>
 <summary>Videos (click to toggle the content)</summary>
 
+Knowledge-based QA: 
+
+![Alt Text](./figs/factool_plugin_kbqa3.gif)
+
 Code: 
 
 ![Alt Text](./figs/factool_plugin_code.gif)

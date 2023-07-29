@@ -529,3 +529,14 @@ Scientific Literature Review:
 ![Alt Text](./figs/factool_plugin_scientific.gif)
 
 </details>
+
+## Citation
+Please cite our [paper](https://arxiv.org/abs/2307.13528) if you find the repository helpful.
+```
+@article{chern2023factool,
+  title={FacTool: Factuality Detection in Generative AI--A Tool Augmented Framework for Multi-Task and Multi-Domain Scenarios},
+  author={Chern, I-Chun and Chern, Steffi and Chen, Shiqi and Yuan, Weizhe and Feng, Kehua and Zhou, Chunting and He, Junxian and Neubig, Graham and Liu, Pengfei},
+  journal={arXiv preprint arXiv:2307.13528},
+  year={2023}
+}
+```

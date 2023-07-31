@@ -7,14 +7,16 @@ import pdb
 from typing import List, Dict
 
 from factool.knowledge_qa.tool import google_search
+from factool.knowledge_qa.tool import local_search
 from factool.utils.base.pipeline import pipeline
 
 class knowledge_qa_pipeline(pipeline):
-    def __init__(self, foundation_model, snippet_cnt):
+    def __init__(self, foundation_model, snippet_cnt, search_type, data_link=None, Embed_link=None):
         super().__init__('knowledge_qa', foundation_model)
-
-        self.tool = google_search(snippet_cnt = snippet_cnt)
-
+        if(search_type == 'online'):
+            self.tool = google_search(snippet_cnt = snippet_cnt)
+        elif(search_type == 'local'):
+            self.tool = local_search(snippet_cnt = snippet_cnt, data_link=data_link, embedding_link=Embed_link)
         with open(os.path.join(self.prompts_path, "claim_extraction.yaml"), 'r') as file:
             data = yaml.load(file, Loader=yaml.FullLoader)
         self.claim_prompt = data['knowledge_qa']
@@ -65,7 +67,7 @@ class knowledge_qa_pipeline(pipeline):
         evidences_in_responses = []
         sources_in_responses = []
         verifications_in_responses = []
-        pdb.set_trace()
+        #pdb.set_trace()
         for claims_in_response in claims_in_responses:
             queries = await self._query_generation(claims_in_response)
             queries_in_responses.append(queries)

@@ -1,5 +1,6 @@
 import asyncio
 import copy
+import pdb
 
 from factool.knowledge_qa.pipeline import knowledge_qa_pipeline
 from factool.code.pipeline import code_pipeline
@@ -8,9 +9,10 @@ from factool.scientific.pipeline import scientific_pipeline
 
 class Factool():
     def __init__(self, foundation_model):
+        self.foundation_model = foundation_model
         self.pipelines = {
-                            "kbqa": knowledge_qa_pipeline(
-                                foundation_model, 10
+                            "kbqa_online": knowledge_qa_pipeline(
+                                foundation_model, 10, "online"
                             ),
                             "code": code_pipeline(
                                 foundation_model, 3, 3
@@ -25,24 +27,33 @@ class Factool():
 
     def run(self, inputs):
         outputs = copy.deepcopy(inputs)
-
         batches = []
         current_category = inputs[0]['category']
+        current_search_type = inputs[0].get('search_type', None)
+        current_data_link = inputs[0].get('data_link', None)
+        current_embedding_link = inputs[0].get('embedding_link', None)
         current_batch = []
 
         for input in inputs:
-            if input['category'] == current_category:
+            if (input['category'] == current_category != 'kbqa') \
+                or (input['category'] == current_category == 'kbqa' and input.get('search_type', None) == current_search_type == "online") \
+                    or (input['category'] == current_category == 'kbqa' and input.get('search_type', None) == current_search_type == "local"\
+                        and input.get('data_link', None)==current_data_link and input.get('embedding_link', None)==current_embedding_link):
                 current_batch.append(input)
             else:
                 batches.append(current_batch)
                 current_batch = [input]
                 current_category = input['category']
+                current_search_type = input.get('search_type', None)
+                current_data_link = input.get('data_link', None)
+                current_embedding_link = input.get('embedding_link', None)
                     
         batches.append(current_batch)  # append the last batch
 
         index = 0
         for batch in batches:
             category = batch[0]['category']
+            search_type = batch[0].get('search_type', None)
             if category == 'code':
                 batch_results = asyncio.run(
                     self.pipelines[category].run_with_tool_api_call(
@@ -51,6 +62,23 @@ class Factool():
                         [sample['entry_point'] for sample in batch]
                     )
                 )
+            elif category == 'kbqa':
+                if search_type is None or search_type == "online":
+                    batch_results = asyncio.run(
+                        self.pipelines[category+"_online"].run_with_tool_api_call(
+                            [sample['prompt'] for sample in batch],
+                            [sample['response'] for sample in batch],
+                        )
+                    )
+                else:
+                    batch_results = asyncio.run(
+                        knowledge_qa_pipeline(
+                            self.foundation_model,2,"local",batch[0].get("data_link"),batch[0].get("embedding_link")
+                        ).run_with_tool_api_call(
+                            [sample['prompt'] for sample in batch],
+                            [sample['response'] for sample in batch],
+                        )
+                    )
             else:
                 batch_results = asyncio.run(
                     self.pipelines[category].run_with_tool_api_call(

@@ -119,6 +119,27 @@ class OpenAIChat():
         
         return responses
 
+class OpenAIEmbed():
+    async def create_embedding(self, text, retry=3):
+        for _ in range(retry):
+            try:
+                response = await openai.Embedding.acreate(input=text, model="text-embedding-ada-002")
+                return response
+            except openai.error.RateLimitError:
+                print('Rate limit error, waiting for 1 second...')
+                await asyncio.sleep(1)
+            except openai.error.APIError:
+                print('API error, waiting for 1 second...')
+                await asyncio.sleep(1)
+            except openai.error.Timeout:
+                print('Timeout error, waiting for 1 second...')
+                await asyncio.sleep(1)
+        return None
+
+    async def process_batch(self, batch, retry=3):
+        tasks = [self.create_embedding(text, retry=retry) for text in batch]
+        return await asyncio.gather(*tasks)
+
 if __name__ == "__main__":
     chat = OpenAIChat()
 
@@ -128,3 +149,10 @@ if __name__ == "__main__":
         ] * 20,
         expected_type=List,
     )
+
+    # Usage
+    embed = OpenAIEmbed()
+    batch = ["string1", "string2", "string3", "string4", "string5", "string6", "string7", "string8", "string9", "string10"]  # Your batch of strings
+    embeddings = asyncio.run(embed.process_batch(batch, retry=3))
+    for embedding in embeddings:
+        print(embedding["data"][0]["embedding"])

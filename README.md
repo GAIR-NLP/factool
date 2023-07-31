@@ -18,7 +18,7 @@ Demo of Knowledge-based QA:
 
 ![Alt Text](./figs/factool_plugin_kbqa.gif)
 
-![Alt Text](./figs/factool_plugin_kbqa2.gif)
+![Alt Text](./figs/factool_chinese.gif)
 
 
 ## Installation
@@ -513,6 +513,8 @@ In this case, you will get:
 <summary>Videos (click to toggle the content)</summary>
 
 Knowledge-based QA: 
+
+![Alt Text](./figs/factool_plugin_kbqa2.gif)
 
 ![Alt Text](./figs/factool_plugin_kbqa3.gif)
 

@@ -21,6 +21,19 @@ Demo of Knowledge-based QA:
 ![Alt Text](./figs/factool_chinese.gif)
 
 
+## Factuality Leaderboard
+
+Our factuality leaderboard shows the factual accuracy of different chatbots evaluated by FacTool.
+
+| LLMs | Weighted Claim-Level Accuracy | Response-Level Accuracy |
+| -------- | -------- | -------- |
+| GPT-4  | **75.60**  | **43.33**  |
+| ChatGPT  | 68.63  | 36.67  |
+| Claude-v1  | 63.95  | 26.67 |
+| Bard  | 61.15  | 33.33 |
+| Vicuna-13B  | 50.35 | 21.67 |
+
+
 ## Installation
 
 * #### For General User

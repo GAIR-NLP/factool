@@ -25,6 +25,7 @@ Demo of Knowledge-based QA:
 
 ![Alt Text](./figs/factool_chinese.gif)
 
+![Alt Text](./figs/factool_japanese.gif)
 
 ## Factuality Leaderboard
 

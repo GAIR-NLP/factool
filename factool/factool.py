@@ -1,5 +1,6 @@
 import asyncio
 import copy
+import pdb
 
 from factool.knowledge_qa.pipeline import knowledge_qa_pipeline
 from factool.code.pipeline import code_pipeline
@@ -63,25 +64,22 @@ class Factool():
                 index += 1
         
         # calculate average response_level_factuality
-        total_response_factuality = sum(output['response_level_factuality'] for output in outputs)
+        total_response_factuality = sum(output['response_level_factuality'] == True for output in outputs)
         avg_response_level_factuality = total_response_factuality / len(outputs)
 
         # calculate average claim_level_factuality
         num_claims = 0
         total_claim_factuality = 0
         for output in outputs:
+            num_claims += len(output['claim_level_factuality'])
             if output['category'] == 'kbqa':
-                num_claims += len(output['claim_level_factuality'])
-                total_claim_factuality += sum(claim['factuality'] for claim in output['claim_level_factuality'])
+                total_claim_factuality += sum(claim['factuality'] == True for claim in output['claim_level_factuality'])
             elif output['category'] == 'code':
-                num_claims += 1
-                total_claim_factuality += output['claim_level_factuality']
+                total_claim_factuality += (output['claim_level_factuality'] == True)
             elif output['category'] == 'math':
-                num_claims += len(output['claim_level_factuality'])
-                total_claim_factuality += sum(output['claim_level_factuality'])
+                total_claim_factuality += sum(claim_factuality == True for claim_factuality in output['claim_level_factuality'])
             elif output['category'] == 'scientific':
-                num_claims += len(output['claim_level_factuality'])
-                total_claim_factuality += sum(claim['factuality'] for claim in output['claim_level_factuality'])
+                total_claim_factuality += sum(claim['factuality'] == True for claim in output['claim_level_factuality'])
 
         avg_claim_level_factuality = total_claim_factuality / num_claims
 

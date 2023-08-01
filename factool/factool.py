@@ -1,6 +1,5 @@
 import asyncio
 import copy
-import pdb
 
 from factool.knowledge_qa.pipeline import knowledge_qa_pipeline
 from factool.code.pipeline import code_pipeline

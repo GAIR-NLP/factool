@@ -83,6 +83,10 @@ class OpenAIChat():
                 except openai.error.ServiceUnavailableError:
                     print('Service unavailable error, waiting for 3 second...')
                     await asyncio.sleep(3)
+                except openai.error.APIConnectionError:
+                    print('API Connection error, waiting for 3 second...')
+                    await asyncio.sleep(3)
+
             return None
 
         async_responses = [

@@ -190,20 +190,24 @@ In this case, you will get:
     'average_claim_level_factuality': 0.0,  
     'average_response_level_factuality': 0.0, 
     'detailed_information': [
-        {'prompt': 'Introduce Graham Neubig',
+        {
+          'prompt': 'Introduce Graham Neubig',
           'response': 'Graham Neubig is a professor at MIT', 
           'category': 'kbqa', 'search_type': 'online', 
           'claims': [{'claim': 'Graham Neubig is a professor at MIT'}], 
           'queries': [['Graham Neubig current position', 'Is Graham Neubig a professor at MIT?']], 
           'evidences': [{'evidence': 'I am an Associate Professor of Computer Science at Carnegie Mellon University and CEO of Inspired Cognition. My research and development focuses on AI and ...', 'source': 'https://www.linkedin.com/in/graham-neubig-10b41616b'}, {'evidence': 'Missing: position | Show results with:position', 'source': 'https://www.linkedin.com/in/graham-neubig-10b41616b'}, {'evidence': 'My research is concerned with language and its role in human communication. In particular, my long-term research goal is to break down barriers in ...', 'source': 'https://miis.cs.cmu.edu/people/222215657/graham-neubig'}, {'evidence': 'My research focuses on handling human languages (like English or Japanese) with computers -- natural language processing. In particular, I am interested in ...', 'source': 'http://www.phontron.com/'}, {'evidence': 'Missing: current | Show results with:current', 'source': 'http://www.phontron.com/'}, {'evidence': 'Graham Neubig. I am an Associate Professor at the Carnegie Mellon University Language Technology Institute in the School of Computer Science, and work with ...', 'source': 'http://www.phontron.com/'}, {'evidence': 'Missing: MIT? | Show results with:MIT?', 'source': 'http://www.phontron.com/'}, {'evidence': 'Associate Professor, Language Technology Institute, Carnegie Mellon University Affiliated Faculty, Machine Learning Department, Carnegie Mellon University', 'source': 'https://www.phontron.com/research.php'}, {'evidence': 'Missing: MIT? | Show results with:MIT?', 'source': 'https://www.phontron.com/research.php'}, {'evidence': 'MIT Embodied Intelligence ... About the speaker: Graham ...', 'source': 'https://youtube.com/watch?v=CtcP5bvODzY'}],
           'claim_level_factuality': [
-              {'reasoning': 'The given text is non-factual. The evidence provided clearly states that Graham Neubig is an Associate Professor of Computer Science at Carnegie Mellon University, not at MIT.', 
-              'error': 'The error in the text is the incorrect affiliation of Graham Neubig. He is not a professor at MIT.', 
-              'correction': 'Graham Neubig is a professor at Carnegie Mellon University.', 
-              'factuality': False, 
-              'claim': 'Graham Neubig is a professor at MIT'}
+              {
+                'reasoning': 'The given text is non-factual. The evidence provided clearly states that Graham Neubig is an Associate Professor of Computer Science at Carnegie Mellon University, not at MIT.', 
+                'error': 'The error in the text is the incorrect affiliation of Graham Neubig. He is not a professor at MIT.', 
+                'correction': 'Graham Neubig is a professor at Carnegie Mellon University.', 
+                'factuality': False, 
+                'claim': 'Graham Neubig is a professor at MIT'
+              }
           ], 
-          'response_level_factuality': False}
+          'response_level_factuality': False
+       }
     ]
 }
 ```

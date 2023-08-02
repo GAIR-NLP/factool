@@ -117,11 +117,15 @@ class knowledge_qa_pipeline(pipeline):
                             else:
                                 verifications_in_response[k].update({'claim': 'None'})
 
+                evidences_with_source = []
+                for evidence, source in zip(evidences_in_response, sources_in_response):
+                    evidences_with_source.append({'evidence': evidence, 'source': source})
                 self.sample_list[index].update({
                     'claims': claims_in_response,
                     'queries': queries_in_response,
-                    'evidences': evidences_in_response,
-                    'sources': sources_in_response,
+                    # 'evidences': evidences_in_response,
+                    # 'sources': sources_in_response,
+                    'evidences': evidences_with_source,
                     'claim_level_factuality': verifications_in_response,
                     'response_level_factuality': all([verification['factuality'] if verification != None else True for verification in verifications_in_response])
                 })

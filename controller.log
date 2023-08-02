@@ -1,0 +1,9 @@
+2023-08-02 06:03:00 | INFO | controller | args: Namespace(host='localhost', port=21001, dispatch_method='shortest_queue')
+2023-08-02 06:03:00 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m213197[0m]
+2023-08-02 06:03:00 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2023-08-02 06:03:00 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2023-08-02 06:03:00 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://localhost:21001[0m (Press CTRL+C to quit)
+2023-08-02 06:04:08 | ERROR | stderr | [32mINFO[0m:     Shutting down
+2023-08-02 06:04:08 | ERROR | stderr | [32mINFO[0m:     Waiting for application shutdown.
+2023-08-02 06:04:08 | ERROR | stderr | [32mINFO[0m:     Application shutdown complete.
+2023-08-02 06:04:08 | ERROR | stderr | [32mINFO[0m:     Finished server process [[36m213197[0m]

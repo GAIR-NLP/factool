@@ -47,32 +47,41 @@ class GoogleSerperAPIWrapper():
         if results.get("answerBox"):
             answer_box = results.get("answerBox", {})
             if answer_box.get("answer"):
-                return [answer_box.get("answer")]
+                element = {"content":answer_box.get("answer"),"source":"None"}
+                return [element]
             elif answer_box.get("snippet"):
-                return [answer_box.get("snippet").replace("\n", " ")]
+                element = {"content":answer_box.get("snippet").replace("\n", " "),"source":"None"}
+                return [element]
             elif answer_box.get("snippetHighlighted"):
-                return answer_box.get("snippetHighlighted")
+                element = {"content":answer_box.get("snippetHighlighted"),"source":"None"}
+                return [element]
             
         if results.get("knowledgeGraph"):
             kg = results.get("knowledgeGraph", {})
             title = kg.get("title")
             entity_type = kg.get("type")
             if entity_type:
-                snippets.append(f"{title}: {entity_type}.")
+                element = {"content":f"{title}: {entity_type}","source":"None"}
+                snippets.append(element)
             description = kg.get("description")
             if description:
-                snippets.append(description)
+                element = {"content":description,"source":"None"}
+                snippets.append(element)
             for attribute, value in kg.get("attributes", {}).items():
-                snippets.append(f"{title} {attribute}: {value}.")
+                element = {"content":f"{attribute}: {value}","source":"None"}
+                snippets.append(element)
 
         for result in results["organic"][: self.k]:
             if "snippet" in result:
-                snippets.append(result["snippet"])
+                element = {"content":result["snippet"],"source":result["link"]}
+                snippets.append(element)
             for attribute, value in result.get("attributes", {}).items():
-                snippets.append(f"{attribute}: {value}.")
+                element = {"content":f"{attribute}: {value}","source":result["link"]}
+                snippets.append(element)
 
         if len(snippets) == 0:
-            return ["No good Google Search Result was found"]
+            element = {"content":"No good Google Search Result was found","source":"None"}
+            return [element]
         
         # keep only the first k snippets
         snippets = snippets[:int(self.k / 2)]
@@ -96,12 +105,12 @@ class GoogleSerperAPIWrapper():
                 flattened_queries.append(item)
 
         results = await self.parallel_searches(flattened_queries, gl=self.gl, hl=self.hl)
-        snippets = []
+        snippets_list = []
         for i in range(len(results)):
-            snippets.append(self._parse_results(results[i]))
-        snippets_split = [snippets[i] + snippets[i+1] for i in range(0, len(snippets), 2)]
+            snippets_list.append(self._parse_results(results[i]))
+        snippets_split = [snippets_list[i] + snippets_list[i+1] for i in range(0, len(snippets_list), 2)]
         return snippets_split
     
 if __name__ == "__main__":
     search = GoogleSerperAPIWrapper()
-    print(search.run("What is the capital of the United States?"))
+    print(asyncio.run(search.run("What is the capital of the United States?")))

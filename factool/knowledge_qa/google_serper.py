@@ -6,11 +6,12 @@ import requests
 import asyncio
 import aiohttp
 import yaml
+import os
 
 from factool.env_config import factool_env_config
 
 # env
-serper_api_key = factool_env_config.serper_api_key
+# serper_api_key = factool_env_config.serper_api_key
 
 
 class GoogleSerperAPIWrapper():
@@ -28,7 +29,8 @@ class GoogleSerperAPIWrapper():
         self.k = snippet_cnt
         self.gl = "us"
         self.hl = "en"
-        self.serper_api_key = serper_api_key
+        self.serper_api_key = os.environ.get("SERPER_API_KEY", None)
+        assert self.serper_api_key is not None, "Please set the SERPER_API_KEY environment variable."
 
     async def _google_serper_search_results(self, session, search_term: str, gl: str, hl: str) -> dict:
         headers = {

@@ -2,18 +2,20 @@ import yaml
 
 from scholarly import scholarly
 from scholarly import ProxyGenerator
+import os
 
 from factool.env_config import factool_env_config
 
 # env
-scraper_api_key = factool_env_config.scraper_api_key
+# scraper_api_key = factool_env_config.scraper_api_key
 
 class google_scholar():
     def __init__(self):
         pg = ProxyGenerator()
-        if scraper_api_key is not None:
-            success = pg.ScraperAPI(scraper_api_key)
-            scholarly.use_proxy(pg)
+        scraper_api_key = os.environ.get("SCRAPER_API_KEY", None)
+        assert scraper_api_key is not None, "Please set the SCRAPER_API_KEY environment variable."
+        success = pg.ScraperAPI(scraper_api_key)
+        scholarly.use_proxy(pg)
 
     def run(self, query):
         try:

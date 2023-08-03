@@ -9,7 +9,7 @@ from factool.env_config import factool_env_config
 
 
 # env
-openai.api_key = factool_env_config.openai_api_key
+# openai.api_key = factool_env_config.openai_api_key
 
 
 config = {

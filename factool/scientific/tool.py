@@ -14,6 +14,7 @@ class google_scholar():
         pg = ProxyGenerator()
         scraper_api_key = os.environ.get("SCRAPER_API_KEY", None)
         assert scraper_api_key is not None, "Please set the SCRAPER_API_KEY environment variable."
+        assert scraper_api_key != '', "Please set the SCRAPER_API_KEY environment variable."
         success = pg.ScraperAPI(scraper_api_key)
         scholarly.use_proxy(pg)
 

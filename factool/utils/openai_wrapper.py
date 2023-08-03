@@ -30,6 +30,7 @@ class OpenAIChat():
     ):
         openai.api_key = os.environ.get("OPENAI_API_KEY", None)
         assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+        assert openai.api_key !='', "Please set the OPENAI_API_KEY environment variable."
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"
         self.config = {
@@ -132,6 +133,7 @@ class OpenAIEmbed():
     def __init__():
         openai.api_key = os.environ.get("OPENAI_API_KEY", None)
         assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+        assert openai.api_key != '', "Please set the OPENAI_API_KEY environment variable."
 
     async def create_embedding(self, text, retry=3):
         for _ in range(retry):

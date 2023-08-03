@@ -31,6 +31,7 @@ class GoogleSerperAPIWrapper():
         self.hl = "en"
         self.serper_api_key = os.environ.get("SERPER_API_KEY", None)
         assert self.serper_api_key is not None, "Please set the SERPER_API_KEY environment variable."
+        assert self.serper_api_key != '', "Please set the SERPER_API_KEY environment variable."
 
     async def _google_serper_search_results(self, session, search_term: str, gl: str, hl: str) -> dict:
         headers = {

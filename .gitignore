@@ -2,3 +2,4 @@
 *.pyc
 **/__pycache__/
 update_space.yml
+/factool.egg-info

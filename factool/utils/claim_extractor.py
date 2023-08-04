@@ -6,6 +6,7 @@ import json
 import asyncio
 from tqdm import tqdm
 from factool.env_config import factool_env_config
+from litellm import completion
 
 
 # env
@@ -26,7 +27,7 @@ config = {
 # Make api calls asynchronously
 async def run_api(messages):
     async def single_run(message):
-        output = openai.ChatCompletion.create(
+        output = completion(
             model=config['model_name'],
             messages=message,
             max_tokens=config['max_tokens'],

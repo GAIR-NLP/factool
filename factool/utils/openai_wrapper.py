@@ -100,7 +100,6 @@ class OpenAIChat():
                         top_p=self.config['top_p'],
                         request_timeout=self.config['request_timeout'],
                     )
-                    print(response)
                     return response
                 except openai.error.RateLimitError:
                     print('Rate limit error, waiting for 40 second...')

@@ -20,7 +20,7 @@ knowledge_qa:
     [text]: Tinder only displays the last 34 photos - but users can easily see more. Firm also said it had improved its mutual friends feature.
     [response]: [{{"claim": "Tinder only displays the last photos"}}, {{"claim": "Tinder only displays the last 34 photos"}}, {{"claim": "Tinder users can easily see more photos"}}, {{"claim": "Tinder said it had improved its feature"}}, {{"claim": "Tinder said it had improved its mutual friends feature"}}]
 
-    Now complete the following:
+    Now complete the following,ONLY RESPONSE IN A LIST FORMAT, NO OTHER WORDS!!!:
     [text]: {input}
     [response]: 
 

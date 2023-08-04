@@ -11,6 +11,7 @@ import asyncio
 from typing import Any, List
 import os
 import pathlib
+from litellm import acompletion
 
 
 from factool.env_config import factool_env_config
@@ -27,6 +28,7 @@ class OpenAIChat():
             top_p=1,
             request_timeout=60,
     ):
+        # TODO: modify this to allow Anthropic, Claude, etc
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"
         self.config = {
@@ -64,7 +66,7 @@ class OpenAIChat():
         async def _request_with_retry(messages, retry=3):
             for _ in range(retry):
                 try:
-                    response = await openai.ChatCompletion.acreate(
+                    response = await acompletion(
                         model=self.config['model_name'],
                         messages=messages,
                         max_tokens=self.config['max_tokens'],

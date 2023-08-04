@@ -81,7 +81,6 @@ class OpenAIChat():
         except:
             if(expected_type == List):
                 valid_output = self.extract_list_from_string(output)
-                #pdb.set_trace()
                 output_eval = ast.literal_eval(valid_output)
                 if not isinstance(output_eval, expected_type):
                     return None
@@ -116,7 +115,6 @@ class OpenAIChat():
                         top_p=self.config['top_p'],
                         request_timeout=self.config['request_timeout'],
                     )
-                    #print(response)
                     return response
                 except openai.error.RateLimitError:
                     print('Rate limit error, waiting for 40 second...')

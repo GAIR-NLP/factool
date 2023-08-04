@@ -53,7 +53,6 @@ class Factool():
         index = 0
         for batch in batches:
             if not batch: continue
-            #pdb.set_trace()
             category = batch[0]['category']
             search_type = batch[0].get('search_type', None)
             if category == 'code':

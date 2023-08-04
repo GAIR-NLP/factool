@@ -1,0 +1,11 @@
+openai==0.27.8
+PyYAML==6.0
+asyncio==3.4.3
+numpy
+pydantic==1.10.9
+scholarly==1.7.11
+scikit-learn
+aiohttp==3.8.4
+fastapi==0.96.0
+uvicorn==0.22.0
+jsonlines

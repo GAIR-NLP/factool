@@ -163,7 +163,7 @@ The response_list should follow the following format:
       'category': 'kbqa', 
       'claims': [claim_11, claim_12, ..., claims_1n], 
       'queries': [[query_111, query_112], [query_121, query_122], ..[query_1n1, query_1n2]], 
-      'evidences': [[evidences_11], [evidences_12], ..., [evidences_1n]], 
+      'evidences': [[evidences_with_source_11], [evidences_with_source_12], ..., [evidences_with_source_1n]], 
       'claim_level_factuality': [{claim_11, reasoning_11, error_11, correction_11, factuality_11}, {claim_12, reasoning_12, error_12, correction_12, factuality_12}, ..., {claim_1n, reasoning_1n, error_1n, correction_1n, factuality_1n}], 
       'response_level_factuality': factuality_1
     },
@@ -173,7 +173,7 @@ The response_list should follow the following format:
       'category': 'kbqa',
       'claims': [claim_21, claim_22, ..., claims_2n], 
       'queries': [[query_211, query_212], [query_221, query_222], ..., [query_2n1, query_2n2]], 
-      'evidences': [[evidences_21], [evidences_22], ..., [evidences_2n]], 
+      'evidences': [[evidences_with_source_21], [evidences_with_source_22], ..., [evidences_with_source_2n]], 
       'claim_level_factuality': [{claim_21, reasoning_21, error_21, correction_21, factuality_21}, {claim_22, reasoning_22, error_22, correction_22, factuality_22}, ..., {claim_2n, reasoning_2n, error_2n, correction_2n, factuality_2n}],
       'response_level_factuality': factuality_2,
     },
@@ -185,23 +185,26 @@ The response_list should follow the following format:
 In this case, you will get:
 
 
-```json
+```python
 {
-  "average_claim_level_factuality": avg_claim_level_factuality,
-  "average_response_level_factuality": avg_response_level_factuality,
-  "detailed_information": [
-    {
-      'prompt': 'Introduce Graham Neubig',
-      'response': 'Graham Neubig is a professor at MIT',
-      'category': 'kbqa',
-      'entry_point': 'answer_question',
-      'claims': [{'claim': 'Graham Neubig is a professor at MIT'}],
-      'queries': [['Is Graham Neubig a professor at MIT?', 'Graham Neubig MIT']],
-      'evidences': [['I am an Associate Professor of Computer Science at Carnegie Mellon University and CEO of Inspired Cognition. My research and development focuses on AI and ...', 'Graham Neubig. I am an Associate Professor at the Carnegie Mellon University Language Technology Institute in the School of Computer Science, and work with ...', 'Missing: MIT? | Must include:MIT?.', 'Associate Professor, Language Technology Institute, Carnegie Mellon University Affiliated Faculty, Machine Learning Department, Carnegie Mellon University', 'Missing: MIT? | Must include:MIT?.', 'I am an Associate Professor at the Carnegie Mellon University Language Technology Institute in the School of Computer Science, and work with a bunch of great ...', 'Missing: MIT | Must include:MIT.', 'I am an Associate Professor of Computer Science at Carnegie Mellon University and CEO of Inspired Cognition. My research and development focuses on AI and ...', 'was heavily inspired by an MIT PhD thesis finished 16 years earlier in 1996! ... Episode 22 of The Thesis Review: Graham Neubig (@gneubig), ...', 'Graham Neubig,. Graham Neubig. Graduate School of Information Science Nara Institute of Science and Technology. Search for other works by this author on:.']],
-      'claim_level_factuality': [{'reasoning': 'The given text states that Graham Neubig is a professor at MIT. However, the provided evidences consistently mention that Graham Neubig is an Associate Professor at Carnegie Mellon University. There is no mention of Graham Neubig being affiliated with MIT in any of the provided evidences.', 'error': 'The given text Falsely states that Graham Neubig is a professor at MIT.', 'correction': 'Graham Neubig is an Associate Professor at Carnegie Mellon University.', 'factuality': False, 'claim': 'Graham Neubig is a professor at MIT'}],
-      'response_level_factuality': False
-    }
-  ]
+    'average_claim_level_factuality': 0.0,  
+    'average_response_level_factuality': 0.0, 
+    'detailed_information': [
+        {'prompt': 'Introduce Graham Neubig',
+          'response': 'Graham Neubig is a professor at MIT', 
+          'category': 'kbqa', 'search_type': 'online', 
+          'claims': [{'claim': 'Graham Neubig is a professor at MIT'}], 
+          'queries': [['Graham Neubig current position', 'Is Graham Neubig a professor at MIT?']], 
+          'evidences': [{'evidence': 'I am an Associate Professor of Computer Science at Carnegie Mellon University and CEO of Inspired Cognition. My research and development focuses on AI and ...', 'source': 'https://www.linkedin.com/in/graham-neubig-10b41616b'}, {'evidence': 'Missing: position | Show results with:position', 'source': 'https://www.linkedin.com/in/graham-neubig-10b41616b'}, {'evidence': 'My research is concerned with language and its role in human communication. In particular, my long-term research goal is to break down barriers in ...', 'source': 'https://miis.cs.cmu.edu/people/222215657/graham-neubig'}, {'evidence': 'My research focuses on handling human languages (like English or Japanese) with computers -- natural language processing. In particular, I am interested in ...', 'source': 'http://www.phontron.com/'}, {'evidence': 'Missing: current | Show results with:current', 'source': 'http://www.phontron.com/'}, {'evidence': 'Graham Neubig. I am an Associate Professor at the Carnegie Mellon University Language Technology Institute in the School of Computer Science, and work with ...', 'source': 'http://www.phontron.com/'}, {'evidence': 'Missing: MIT? | Show results with:MIT?', 'source': 'http://www.phontron.com/'}, {'evidence': 'Associate Professor, Language Technology Institute, Carnegie Mellon University Affiliated Faculty, Machine Learning Department, Carnegie Mellon University', 'source': 'https://www.phontron.com/research.php'}, {'evidence': 'Missing: MIT? | Show results with:MIT?', 'source': 'https://www.phontron.com/research.php'}, {'evidence': 'MIT Embodied Intelligence ... About the speaker: Graham ...', 'source': 'https://youtube.com/watch?v=CtcP5bvODzY'}],
+          'claim_level_factuality': [
+              {'reasoning': 'The given text is non-factual. The evidence provided clearly states that Graham Neubig is an Associate Professor of Computer Science at Carnegie Mellon University, not at MIT.', 
+              'error': 'The error in the text is the incorrect affiliation of Graham Neubig. He is not a professor at MIT.', 
+              'correction': 'Graham Neubig is a professor at Carnegie Mellon University.', 
+              'factuality': False, 
+              'claim': 'Graham Neubig is a professor at MIT'}
+          ], 
+          'response_level_factuality': False}
+    ]
 }
 ```
 </details>
@@ -288,7 +291,7 @@ response_list =
 
 In this case, you will get:
 
-```json
+```python
 {
   "average_claim_level_factuality": 1.0,
   "average_response_level_factuality": 1.0,
@@ -385,7 +388,7 @@ The response_list should follow the following format:
 
 In this case, you will get:
 
-```json
+```python
 {
   "average_claim_level_factuality": 0.5,
   "average_response_level_factuality": 0.0,
@@ -491,7 +494,7 @@ The response_list should follow the following format:
 
 In this case, you will get:
 
-```json
+```python
 {
     "average_claim_level_factuality": 0.0, 
     "average_response_level_factuality": 0.0, 

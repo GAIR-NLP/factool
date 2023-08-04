@@ -11,13 +11,14 @@ import asyncio
 from typing import Any, List
 import os
 import pathlib
+import openai
 import re
 
 
-from factool.env_config import factool_env_config
+# from factool.env_config import factool_env_config
 
 # env
-openai.api_key = factool_env_config.openai_api_key
+# openai.api_key = factool_env_config.openai_api_key
 
 class OpenAIChat():
     def __init__(
@@ -28,6 +29,9 @@ class OpenAIChat():
             top_p=1,
             request_timeout=60,
     ):
+        openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+        assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+        assert openai.api_key !='', "Please set the OPENAI_API_KEY environment variable."
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"
         else:
@@ -151,6 +155,11 @@ class OpenAIChat():
         return responses
 
 class OpenAIEmbed():
+    def __init__():
+        openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+        assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+        assert openai.api_key != '', "Please set the OPENAI_API_KEY environment variable."
+
     async def create_embedding(self, text, retry=3):
         for _ in range(retry):
             try:

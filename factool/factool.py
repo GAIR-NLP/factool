@@ -12,9 +12,9 @@ class Factool():
     def __init__(self, foundation_model):
         self.foundation_model = foundation_model
         self.pipelines = {
-                            # "kbqa_online": knowledge_qa_pipeline(
-                            #     foundation_model, 10, "online"
-                            # ),
+                            "kbqa_online": knowledge_qa_pipeline(
+                                foundation_model, 10, "online"
+                            ),
                             # "code": code_pipeline(
                             #     foundation_model, 3, 3
                             # ),

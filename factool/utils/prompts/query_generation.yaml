@@ -74,3 +74,6 @@ math:
       {{
         "python_snippet": "An executable Python snippet that validates the accuracy of the math calculation against the calculated answer. The Python snippet should print 'True' if the calculated answer is correct, and 'False' otherwise."
       }}
+
+med_doc_qa:
+    nothing

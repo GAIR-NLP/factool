@@ -71,9 +71,9 @@ class knowledge_qa_pipeline(pipeline):
             queries = await self._query_generation(claims_in_response)
             queries_in_responses.append(queries)
             search_outputs_for_claims = await self.tool.run(queries)
-            evidences = [output["content"] for search_outputs_for_claim in search_outputs_for_claims for output in search_outputs_for_claim]
+            evidences = [[output['content'] for output in search_outputs_for_claim] for search_outputs_for_claim in search_outputs_for_claims]
             evidences_in_responses.append(evidences)
-            sources = [output["source"] for search_outputs_for_claim in search_outputs_for_claims for output in search_outputs_for_claim]
+            sources = [[output['source'] for output in search_outputs_for_claim] for search_outputs_for_claim in search_outputs_for_claims]
             sources_in_responses.append(sources)
             verifications = await self._verification(claims_in_response, evidences)
             verifications_in_responses.append(verifications)

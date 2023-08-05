@@ -6,3 +6,4 @@ update_space.yml
 *.log*
 .idea
 app.py
+requirements.txt

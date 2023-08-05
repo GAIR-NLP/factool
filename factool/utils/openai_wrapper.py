@@ -11,12 +11,14 @@ import asyncio
 from typing import Any, List
 import os
 import pathlib
+import openai
+import re
 
 
-from factool.env_config import factool_env_config
+# from factool.env_config import factool_env_config
 
 # env
-openai.api_key = factool_env_config.openai_api_key
+# openai.api_key = factool_env_config.openai_api_key
 
 class OpenAIChat():
     def __init__(
@@ -29,6 +31,12 @@ class OpenAIChat():
     ):
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"
+        else:
+            #openai.api_base = "https://api.openai.com/v1"
+            openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+            assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+            assert openai.api_key !='', "Please set the OPENAI_API_KEY environment variable."
+
         self.config = {
             'model_name': model_name,
             'max_tokens': max_tokens,
@@ -37,6 +45,29 @@ class OpenAIChat():
             'request_timeout': request_timeout,
         }
 
+    def extract_list_from_string(self, input_string):
+        # pattern = r'\[.*\]'  
+        # result = re.search(pattern, input_string)
+        # if result:
+        #     return result.group()
+        # else:
+        #     return None
+        start_index = input_string.find('[')  
+        end_index = input_string.rfind(']') 
+
+        if start_index != -1 and end_index != -1 and start_index < end_index:
+            return input_string[start_index:end_index + 1]
+        else:
+            return None
+        
+    def extract_dict_from_string(self, input_string):
+        start_index = input_string.find('{')
+        end_index = input_string.rfind('}')
+
+        if start_index != -1 and end_index != -1 and start_index < end_index:
+            return input_string[start_index:end_index + 1]
+        else:
+            return None
     
     def _boolean_fix(self, output):
         return output.replace("true", "True").replace("false", "False")
@@ -48,7 +79,19 @@ class OpenAIChat():
                 return None
             return output_eval
         except:
-            return None
+            if(expected_type == List):
+                valid_output = self.extract_list_from_string(output)
+                output_eval = ast.literal_eval(valid_output)
+                if not isinstance(output_eval, expected_type):
+                    return None
+                return output_eval
+            elif(expected_type == dict):
+                valid_output = self.extract_dict_from_string(output)
+                output_eval = ast.literal_eval(valid_output)
+                if not isinstance(output_eval, expected_type):
+                    return None
+                return output_eval
+
 
     async def dispatch_openai_requests(
         self,
@@ -126,6 +169,11 @@ class OpenAIChat():
         return responses
 
 class OpenAIEmbed():
+    def __init__():
+        openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+        assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
+        assert openai.api_key != '', "Please set the OPENAI_API_KEY environment variable."
+
     async def create_embedding(self, text, retry=3):
         for _ in range(retry):
             try:
@@ -147,18 +195,19 @@ class OpenAIEmbed():
         return await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
-    chat = OpenAIChat()
+    chat = OpenAIChat(model_name='llama-2-7b-chat-hf')
 
-    predictions = chat.async_run(
+    predictions = asyncio.run(chat.async_run(
         messages_list=[
             [{"role": "user", "content": "show either 'ab' or '['a']'. Do not do anything else."}],
         ] * 20,
         expected_type=List,
-    )
+    ))
 
+    print(predictions)
     # Usage
-    embed = OpenAIEmbed()
-    batch = ["string1", "string2", "string3", "string4", "string5", "string6", "string7", "string8", "string9", "string10"]  # Your batch of strings
-    embeddings = asyncio.run(embed.process_batch(batch, retry=3))
-    for embedding in embeddings:
-        print(embedding["data"][0]["embedding"])
+    # embed = OpenAIEmbed()
+    # batch = ["string1", "string2", "string3", "string4", "string5", "string6", "string7", "string8", "string9", "string10"]  # Your batch of strings
+    # embeddings = asyncio.run(embed.process_batch(batch, retry=3))
+    # for embedding in embeddings:
+    #     print(embedding["data"][0]["embedding"])

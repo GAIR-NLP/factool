@@ -59,7 +59,7 @@ class knowledge_qa_pipeline(pipeline):
             ]
             for claim, evidence in zip(claims, evidences)
         ]
-        return await self.chat.async_run(messages_list, Dict)
+        return await self.chat.async_run(messages_list, dict)
     
     async def run_with_tool_live(self, responses):
         claims_in_responses = await self._claim_extraction(responses)
@@ -67,7 +67,6 @@ class knowledge_qa_pipeline(pipeline):
         evidences_in_responses = []
         sources_in_responses = []
         verifications_in_responses = []
-        #pdb.set_trace()
         for claims_in_response in claims_in_responses:
             queries = await self._query_generation(claims_in_response)
             queries_in_responses.append(queries)

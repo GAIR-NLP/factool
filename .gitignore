@@ -1,4 +1,9 @@
 /test
 *.pyc
 **/__pycache__/
+update_space.yml
+/factool.egg-info
+*.log*
 .idea
+app.py
+requirements.txt

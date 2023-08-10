@@ -86,7 +86,6 @@ class OpenAIChat():
                     return None
                 return output_eval
             elif(expected_type == dict):
-                pdb.set_trace()
                 valid_output = self.extract_dict_from_string(output)
                 output_eval = ast.literal_eval(valid_output)
                 if not isinstance(output_eval, expected_type):

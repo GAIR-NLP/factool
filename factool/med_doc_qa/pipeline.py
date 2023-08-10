@@ -53,13 +53,25 @@ class med_doc_qa_pipeline(pipeline):
             for claim, evidence in zip(claims, evidences)
         ]
         return await self.chat.async_run(messages_list, dict)
+
+    async def _evidence_extraction(self, claims, prompts_parsed):
+        messages_list = [
+            [
+                {"role": "system", "content": self.verification_prompt['system']},
+                {"role": "user", "content": self.verification_prompt['evidence_extraction'].format(claim=claim['claim'], evidence=str(prompt_parsed))},
+            ]
+            for claim, prompt_parsed in zip(claims, prompts_parsed)
+        ]
+        return await self.chat.async_run(messages_list, List)
     
     async def run_with_tool_live(self, prompts, responses):
         claims_in_responses = await self._claim_extraction(responses)
         evidences_in_responses = []
         verifications_in_responses = []
         for claims_in_response, prompt in zip(claims_in_responses,prompts):
-            evidences = prompt.split('\n') * len(claims_in_response)
+            # parsed_prompts = prompt.split('\n') * len(claims_in_response)
+            # evidences = await self._evidence_extraction(claims_in_response, parsed_prompts)
+            evidences = [prompt.split('\n') for _ in claims_in_response]
             evidences_in_responses.append(evidences)
             verifications = await self._verification(claims_in_response, evidences)
             verifications_in_responses.append(verifications)

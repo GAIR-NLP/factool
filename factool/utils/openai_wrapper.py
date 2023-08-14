@@ -27,7 +27,7 @@ class OpenAIChat():
             max_tokens=2500,
             temperature=0,
             top_p=1,
-            request_timeout=60,
+            request_timeout=120,
     ):
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"

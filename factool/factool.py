@@ -6,6 +6,7 @@ from factool.knowledge_qa.pipeline import knowledge_qa_pipeline
 from factool.code.pipeline import code_pipeline
 from factool.math.pipeline import math_pipeline
 from factool.scientific.pipeline import scientific_pipeline
+from factool.med_doc_qa.pipeline import med_doc_qa_pipeline
 
 class Factool():
     def __init__(self, foundation_model):
@@ -23,6 +24,9 @@ class Factool():
                             "scientific": scientific_pipeline(
                                 foundation_model
                             ),
+                            "med_doc_qa": med_doc_qa_pipeline(
+                                foundation_model
+                            )
                         }
 
     def run(self, inputs):

@@ -36,7 +36,7 @@
 3. 诊断中“考虑为二级高血压”为多余信息。
 4. 治疗建议中“建议服用降压药物，如无不适，继续服用”为多余信息
 
-### factool claim level factuality output
+### factool claim level factuality output(using the code snippet example.py)
 ~~~python
 [{"claim": "主诉是头晕、心慌，持续一个月，每周出现两三次，偶尔伴有轻微头痛", "reasoning": "给定的文本与提供的证据完全一致。文本中的信息，包括患者的主诉（头晕、心慌，持续一个月，每周出现两三次，偶尔伴有轻微头痛）都在证据中得到了确认。", "error": "None", "correction": "None", "factuality": true}, 
 {"claim": "现病史包含最近一个月内经常感到头晕和心慌，每周出现两三次", "reasoning": "根据提供的证据，患者确实描述了他在过去一个月内经常感到头晕和心慌，每周出现两三次的症状。这与给定的文本完全一致。", "error": "None", "correction": "None", "factuality": true}, 

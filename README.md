@@ -254,8 +254,8 @@ inputs = [
                 "response": "{your_response}",
                 "category": "kbqa",
                 "search_type": "local",
-                "data_link": "/home/bjwang/projects/factool/test/三亚市公园条例.jsonl",
-                # "embedding_link": "/home/bjwang/projects/factool/test/三亚市公园条例.pkl"
+                "data_link": "/your/path/to/your/data/data.jsonl",
+                # "embedding_link": "/your/path/to/your/embedding/data.pkl"
             },
 ]
 ```

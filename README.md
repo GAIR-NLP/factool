@@ -244,21 +244,6 @@ Then, you can use factool powered by local chatbots by passing the model name yo
 factool_instance = Factool("vicuna-7b-v1.3")
 ```
 
-### Use local knowledge data
-You just need to set the search_type as local and to provide your data link(jsonlines format) for the first time and provide embedding link(auto generated pkl format) after that
-
-```python3
-inputs = [
-            {
-                "prompt": {your_prompt},
-                "response": "{your_response}",
-                "category": "kbqa",
-                "search_type": "local",
-                "data_link": "/your/path/to/your/data/data.jsonl",
-                # "embedding_link": "/your/path/to/your/embedding/data.pkl"
-            },
-]
-```
 </details>
 
 

@@ -24,7 +24,7 @@ class OpenAIChat():
     def __init__(
             self,
             model_name='gpt-3.5-turbo',
-            max_tokens=2500,
+            max_tokens=4000,
             temperature=0,
             top_p=1,
             request_timeout=120,
@@ -32,6 +32,10 @@ class OpenAIChat():
         if 'gpt' not in model_name:
             openai.api_base = "http://localhost:8000/v1"
         else:
+            if model_name == 'gpt-3.5-turbo':
+                self.max_tokens = max_tokens // 2
+            else:
+                self.max_tokens = max_tokens
             #openai.api_base = "https://api.openai.com/v1"
             openai.api_key = os.environ.get("OPENAI_API_KEY", None)
             assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
@@ -39,7 +43,7 @@ class OpenAIChat():
 
         self.config = {
             'model_name': model_name,
-            'max_tokens': max_tokens,
+            'max_tokens': self.max_tokens,
             'temperature': temperature,
             'top_p': top_p,
             'request_timeout': request_timeout,
@@ -104,7 +108,7 @@ class OpenAIChat():
         Returns:
             List of responses from OpenAI API.
         """
-        async def _request_with_retry(messages, retry=3):
+        async def _request_with_retry(messages, retry=5):
             for _ in range(retry):
                 try:
                     response = await openai.ChatCompletion.acreate(
@@ -117,20 +121,29 @@ class OpenAIChat():
                     )
                     return response
                 except openai.error.RateLimitError:
-                    print('Rate limit error, waiting for 40 second...')
-                    await asyncio.sleep(40)
+                    print('Rate limit error, waiting for 45 second...')
+                    await asyncio.sleep(45)
                 except openai.error.APIError:
-                    print('API error, waiting for 1 second...')
-                    await asyncio.sleep(1)
-                except openai.error.Timeout:
-                    print('Timeout error, waiting for 1 second...')
-                    await asyncio.sleep(1)
-                except openai.error.ServiceUnavailableError:
-                    print('Service unavailable error, waiting for 3 second...')
-                    await asyncio.sleep(3)
+                    print('API error, waiting for 2 second...')
+                    await asyncio.sleep(2)
                 except openai.error.APIConnectionError:
-                    print('API Connection error, waiting for 3 second...')
-                    await asyncio.sleep(3)
+                    print('API Connection error, waiting for 2 second...')
+                    await asyncio.sleep(2)
+                except openai.error.AuthenticationError:
+                    print('AuthenticationError error, waiting for 2 second...')
+                    await asyncio.sleep(2)
+                except openai.error.InvalidAPIType:
+                    print('InvalidAPIType error, waiting for 2 second...')
+                    await asyncio.sleep(2)
+                except openai.error.PermissionError:
+                    print('PermissionError error, waiting for 2 second...')
+                    await asyncio.sleep(2)
+                except openai.error.Timeout:
+                    print('Timeout error, waiting for 2 second...')
+                    await asyncio.sleep(2)
+                except openai.error.SignatureVerificationError:
+                    print('SignatureVerificationError error, waiting for 2 second...')
+                    await asyncio.sleep(2)
 
             return None
 
@@ -142,7 +155,7 @@ class OpenAIChat():
         return await asyncio.gather(*async_responses)
     
     async def async_run(self, messages_list, expected_type):
-        retry = 1
+        retry = 5
         responses = [None for _ in range(len(messages_list))]
         messages_list_cur_index = [i for i in range(len(messages_list))]
 
@@ -169,7 +182,7 @@ class OpenAIChat():
         return responses
 
 class OpenAIEmbed():
-    def __init__():
+    def __init__(self):
         openai.api_key = os.environ.get("OPENAI_API_KEY", None)
         assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
         assert openai.api_key != '', "Please set the OPENAI_API_KEY environment variable."
@@ -178,22 +191,61 @@ class OpenAIEmbed():
         for _ in range(retry):
             try:
                 response = await openai.Embedding.acreate(input=text, model="text-embedding-ada-002")
-                return response
+                return response["data"][0]["embedding"]
             except openai.error.RateLimitError:
-                print('Rate limit error, waiting for 1 second...')
-                await asyncio.sleep(1)
+                print('Rate limit error, waiting for 45 second...')
+                await asyncio.sleep(45)
             except openai.error.APIError:
-                print('API error, waiting for 1 second...')
-                await asyncio.sleep(1)
+                print('API error, waiting for 2 second...')
+                await asyncio.sleep(2)
+            except openai.error.APIConnectionError:
+                print('API Connection error, waiting for 2 second...')
+                await asyncio.sleep(2)
+            except openai.error.AuthenticationError:
+                print('AuthenticationError error, waiting for 2 second...')
+                await asyncio.sleep(2)
+            except openai.error.InvalidAPIType:
+                print('InvalidAPIType error, waiting for 2 second...')
+                await asyncio.sleep(2)
+            except openai.error.PermissionError:
+                print('PermissionError error, waiting for 2 second...')
+                await asyncio.sleep(2)
             except openai.error.Timeout:
-                print('Timeout error, waiting for 1 second...')
-                await asyncio.sleep(1)
+                print('Timeout error, waiting for 2 second...')
+                await asyncio.sleep(2)
+            except openai.error.SignatureVerificationError:
+                print('SignatureVerificationError error, waiting for 2 second...')
+                await asyncio.sleep(2)
         return None
 
     async def process_batch(self, batch, retry=3):
         tasks = [self.create_embedding(text, retry=retry) for text in batch]
         return await asyncio.gather(*tasks)
+    
+    async def async_run(self, batch, retry=3):
+        responses = [None for _ in range(len(batch))]
+        batch_cur_index = [i for i in range(len(batch))]
 
+        while retry > 0 and len(batch_cur_index) > 0:
+            print(f'{retry} retry left...')
+            batch_cur = [batch[i] for i in batch_cur_index]
+            
+            predictions = await self.process_batch(
+                batch=batch_cur,
+            )
+
+            finised_index = []
+            for i, pred in enumerate(predictions):
+                if pred is not None:
+                    responses[batch_cur_index[i]] = pred
+                    finised_index.append(batch_cur_index[i])
+            
+            batch_cur_index = [i for i in batch_cur_index if i not in finised_index]
+            
+            retry -= 1
+            
+        return responses
+    
 if __name__ == "__main__":
     chat = OpenAIChat(model_name='llama-2-7b-chat-hf')
 

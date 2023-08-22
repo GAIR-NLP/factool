@@ -7,6 +7,7 @@ from factool.code.pipeline import code_pipeline
 from factool.math.pipeline import math_pipeline
 from factool.scientific.pipeline import scientific_pipeline
 from factool.med_doc_qa.pipeline import med_doc_qa_pipeline
+from factool.law_counsel_qa.pipeline import law_counsel_qa_pipeline
 
 class Factool():
     def __init__(self, foundation_model):
@@ -84,6 +85,15 @@ class Factool():
                             [sample['response'] for sample in batch],
                         )
                     )
+            elif category == "law_counsel_qa":
+                batch_results = asyncio.run(
+                    law_counsel_qa_pipeline(
+                        self.foundation_model,2,batch[0].get("data_link"),batch[0].get("embedding_link")
+                    ).run_with_tool_api_call(
+                        [sample['prompt'] for sample in batch],
+                        [sample['response'] for sample in batch],
+                    )
+                )
             else:
                 batch_results = asyncio.run(
                     self.pipelines[category].run_with_tool_api_call(

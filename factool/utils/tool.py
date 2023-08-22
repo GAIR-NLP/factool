@@ -56,9 +56,7 @@ class local_search():
 
         faiss = FAISS.from_embeddings(self.embedding, embedding=OpenAIEmbeddings(model="text-embedding-ada-002"))
         related_docs = faiss.similarity_search_by_vector(query_embed, k=self.snippet_cnt)
-        related_docs = "".join(["<"+ doc.page_content + ">" for doc in related_docs])
-
-        #return [{"content":self.data[i],"source":"local"} for i in top_k_indices]
+        related_docs = [{"content":doc.page_content,"source":"local"} for doc in related_docs]
         return related_docs
 
     

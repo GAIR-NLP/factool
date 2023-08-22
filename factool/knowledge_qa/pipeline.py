@@ -7,7 +7,7 @@ import pdb
 from typing import List, Dict
 
 from factool.knowledge_qa.tool import google_search
-from factool.knowledge_qa.tool import local_search
+from factool.utils.tool import local_search
 from factool.utils.base.pipeline import pipeline
 
 class knowledge_qa_pipeline(pipeline):

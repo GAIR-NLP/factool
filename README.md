@@ -184,7 +184,7 @@ The response_list should follow the following format:
 }
 ```
 
-In this case, you will get:
+#### In this case, you will get:
 
 
 ```python
@@ -212,6 +212,52 @@ In this case, you will get:
        }
     ]
 }
+```
+
+### Use with local chatbots
+install fastchat([fastchat github repository]("https://github.com/lm-sys/FastChat/tree/main"))
+``` python
+pip install fastchat
+```
+#### RESTful API Server([doc]("https://github.com/lm-sys/FastChat/blob/main/docs/openai_api.md"))
+First, launch the controller
+
+```bash
+python3 -m fastchat.serve.controller
+```
+
+Then, launch the model worker(s)
+
+```bash
+python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.3
+```
+
+Finally, launch the RESTful API server
+
+```bash
+python3 -m fastchat.serve.openai_api_server --host localhost --port 8000
+```
+
+Then, you can use factool powered by local chatbots by passing the model name you used in the fastchat module to our Factool initialization method
+
+```python3
+factool_instance = Factool("vicuna-7b-v1.3")
+```
+
+### Use local knowledge data
+You just need to set the search_type as local and to provide your data link(jsonlines format) for the first time and provide embedding link(auto generated pkl format) after that
+
+```python3
+inputs = [
+            {
+                "prompt": {your_prompt},
+                "response": "{your_response}",
+                "category": "kbqa",
+                "search_type": "local",
+                "data_link": "/home/bjwang/projects/factool/test/三亚市公园条例.jsonl",
+                # "embedding_link": "/home/bjwang/projects/factool/test/三亚市公园条例.pkl"
+            },
+]
 ```
 </details>
 

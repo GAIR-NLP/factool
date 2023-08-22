@@ -50,6 +50,7 @@ class law_counsel_qa_pipeline(pipeline):
         verifications_in_responses = []
         for claims_in_response,prompt,response in zip(claims_in_responses, prompts, responses):
             related_laws = await self.tool.search(prompt+response)
+            related_laws = "".join(["<"+ doc['content'] + ">" for doc in related_laws])
             evidences_in_responses.append(related_laws)
             verifications = await self._verification(claims_in_response, prompt, response, related_laws)
             verifications_in_responses.append(verifications)

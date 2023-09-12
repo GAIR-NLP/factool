@@ -105,7 +105,10 @@ class Factool():
         for output in outputs:
             num_claims += len(output['claim_level_factuality'])
             if output['category'] == 'kbqa':
-                total_claim_factuality += sum(claim['factuality'] == True for claim in output['claim_level_factuality'])
+                if output['claim_level_factuality'] != []:
+                    total_claim_factuality += sum(claim['factuality'] == True if claim != None else 0 for claim in output['claim_level_factuality'])
+                else:
+                    total_claim_factuality += 0
             elif output['category'] == 'code':
                 total_claim_factuality += (output['claim_level_factuality'] == True)
             elif output['category'] == 'math':

@@ -79,6 +79,7 @@ class OpenAIChat():
                 return None
             return output_eval
         except:
+            '''
             if(expected_type == List):
                 valid_output = self.extract_list_from_string(output)
                 output_eval = ast.literal_eval(valid_output)
@@ -91,7 +92,8 @@ class OpenAIChat():
                 if not isinstance(output_eval, expected_type):
                     return None
                 return output_eval
-
+            '''
+            return None
 
     async def dispatch_openai_requests(
         self,

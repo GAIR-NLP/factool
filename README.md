@@ -188,7 +188,7 @@ The response_list should follow the following format:
 }
 ```
 
-In this case, you will get:
+#### In this case, you will get:
 
 
 ```python
@@ -217,6 +217,37 @@ In this case, you will get:
     ]
 }
 ```
+
+### Use with local chatbots
+install fastchat([fastchat github repository]("https://github.com/lm-sys/FastChat/tree/main"))
+``` python
+pip install fastchat
+```
+#### RESTful API Server([doc]("https://github.com/lm-sys/FastChat/blob/main/docs/openai_api.md"))
+First, launch the controller
+
+```bash
+python3 -m fastchat.serve.controller
+```
+
+Then, launch the model worker(s)
+
+```bash
+python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.3
+```
+
+Finally, launch the RESTful API server
+
+```bash
+python3 -m fastchat.serve.openai_api_server --host localhost --port 8000
+```
+
+Then, you can use factool powered by local chatbots by passing the model name you used in the fastchat module to our Factool initialization method
+
+```python3
+factool_instance = Factool("vicuna-7b-v1.3")
+```
+
 </details>
 
 

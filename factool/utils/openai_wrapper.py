@@ -37,7 +37,9 @@ class OpenAIChat():
             else:
                 self.max_tokens = max_tokens
             #openai.api_base = "https://api.openai.com/v1"
+            # openai.organization = os.environ.get("OPENAI_ORGANIZATION", None)
             openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+            openai.api_base = "https://api.chatanywhere.com.cn/v1"
             assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
             assert openai.api_key !='', "Please set the OPENAI_API_KEY environment variable."
 
@@ -95,6 +97,9 @@ class OpenAIChat():
                 if not isinstance(output_eval, expected_type):
                     return None
                 return output_eval
+            else:
+                pass
+                # pdb.set_trace()
 
 
     async def dispatch_openai_requests(
@@ -183,7 +188,9 @@ class OpenAIChat():
 
 class OpenAIEmbed():
     def __init__(self):
+        # openai.organization = os.environ.get("OPENAI_ORGANIZATION", None)
         openai.api_key = os.environ.get("OPENAI_API_KEY", None)
+        openai.api_base = "https://api.chatanywhere.com.cn/v1"
         assert openai.api_key is not None, "Please set the OPENAI_API_KEY environment variable."
         assert openai.api_key != '', "Please set the OPENAI_API_KEY environment variable."
 

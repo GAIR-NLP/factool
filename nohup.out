@@ -1,0 +1,295 @@
+SystemLog: [2023-08-24 13:32:43][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=14510 request_id=880c5c393f684b3969921cf1a899a53a response_code=200
+SystemLog: [2023-08-24 13:32:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=16964 request_id=79755cea1e8d5239a442c64ef42721d0 response_code=200
+SystemLog: [2023-08-24 13:32:46][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=18002 request_id=1a81628cdbe7bda7afc4a2be8531e4a6 response_code=200
+SystemLog: [2023-08-24 13:32:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=21726 request_id=8a8b885ade6237a83d021d93b3683825 response_code=200
+SystemLog: [2023-08-24 13:32:54][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25728 request_id=eb5138c49699e8797de1e61d5cd4e58e response_code=200
+SystemLog: [2023-08-24 13:32:54][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=486 request_id=ce42fc8b07f885221867826aecf43fb9 response_code=200
+SystemLog: [2023-08-24 13:32:55][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=103 request_id=8be815a818b49e58712d808f28b7a61b response_code=200
+SystemLog: [2023-08-24 13:32:55][faiss.loader][INFO] - Loading faiss with AVX2 support.
+SystemLog: [2023-08-24 13:32:55][faiss.loader][INFO] - Successfully loaded faiss with AVX2 support.
+SystemLog: [2023-08-24 13:33:56][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=61242 request_id=c62c673b9404992ff474fdb4c565f7ab response_code=200
+SystemLog: [2023-08-24 13:33:58][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=62902 request_id=8083ae4d1230e2a36cfad4ad034c7131 response_code=200
+SystemLog: [2023-08-24 13:33:58][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=526 request_id=383ee53f5034226d56730a6caad0c31b response_code=200
+SystemLog: [2023-08-24 13:33:59][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=66 request_id=fb442f0410dbe143e46edb17b6796bc6 response_code=200
+SystemLog: [2023-08-24 13:34:36][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=37631 request_id=45c1e28592a403e2902d21833cb2972f response_code=200
+SystemLog: [2023-08-24 13:34:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=39007 request_id=2ff3afbafcf41d4eb6cdd448b540ff2d response_code=200
+SystemLog: [2023-08-24 13:34:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=667 request_id=f2688b70c1f6e25a1b26cb8aeae42d96 response_code=200
+SystemLog: [2023-08-24 13:34:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=68 request_id=ce385125f415590341caf3da24e8c073 response_code=200
+SystemLog: [2023-08-24 13:35:23][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=44410 request_id=dd44ffcd4386b050e0db585bff1fc753 response_code=200
+SystemLog: [2023-08-24 13:35:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=49678 request_id=8e0f854caa81484e4235eb60c55dc85d response_code=200
+SystemLog: [2023-08-24 13:35:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=682 request_id=4320e02ac0ec83d9bff75e72fc30b9c6 response_code=200
+SystemLog: [2023-08-24 13:35:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=134 request_id=3e2c5b8a312e6a4bdc80aaf657068d94 response_code=200
+SystemLog: [2023-08-24 13:36:05][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=35269 request_id=6b3b5f8b2efcab4ca0e73c7815c65892 response_code=200
+SystemLog: [2023-08-24 13:36:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=51126 request_id=248d67da92a1b553c06437730fe6c55e response_code=200
+SystemLog: [2023-08-24 13:36:24][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2669 request_id=297bbc1fe4b0a5342bf17af7a83a02f5 response_code=200
+SystemLog: [2023-08-24 13:36:24][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=307 request_id=5f4ead78a464d250f3ea99428c78552c response_code=200
+SystemLog: [2023-08-24 13:37:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=48542 request_id=8b629692e54883cdb0d9200ad8e33805 response_code=200
+SystemLog: [2023-08-24 13:37:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=56846 request_id=107e3d6eaaabe7918a14650a74868f23 response_code=200
+SystemLog: [2023-08-24 13:37:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=8732 request_id=e30d2010d86a2ef794db7b14191ff3d6 response_code=200
+SystemLog: [2023-08-24 13:37:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=17791 request_id=02f5802bdf4350bda4da351a44d4f7a0 response_code=200
+SystemLog: [2023-08-24 13:37:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=18287 request_id=5e8df9b2a13a4e47d892988d08683a9a response_code=200
+SystemLog: [2023-08-24 13:37:40][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=18728 request_id=cc6d82a6c1a345ca41baf7a9a593adf5 response_code=200
+SystemLog: [2023-08-24 13:37:51][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=30062 request_id=ed9704f83fcea8f17af1b0c94d000fd3 response_code=200
+SystemLog: [2023-08-24 13:37:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=514 request_id=9c5867d9e11347b3480a69ab5596c0a8 response_code=200
+SystemLog: [2023-08-24 13:37:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=252 request_id=ddec6094eb25792f80aedcb68842efa6 response_code=200
+SystemLog: [2023-08-24 13:38:18][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25951 request_id=a3a8fc32693f87568dd5bf931343c554 response_code=200
+SystemLog: [2023-08-24 13:38:19][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=26948 request_id=2ed68bf235f6cabe1c95c9426409fde7 response_code=200
+SystemLog: [2023-08-24 13:38:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=459 request_id=36c01f40567a10dbcf2f8dd6ca693646 response_code=200
+SystemLog: [2023-08-24 13:38:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=106 request_id=f095a9073e7697638a897986103a5684 response_code=200
+SystemLog: [2023-08-24 13:39:11][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=50309 request_id=7ed4293ab188a82158bb90f1435605de response_code=200
+SystemLog: [2023-08-24 13:39:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=61150 request_id=00374cf2ac67a83f5b2befb42b321b50 response_code=200
+SystemLog: [2023-08-24 13:39:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=572 request_id=2f6ac1a70087f5ffe683e5c0a7819c1f response_code=200
+SystemLog: [2023-08-24 13:39:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=64 request_id=266080530105b7d24c6a49cfa35ad145 response_code=200
+SystemLog: [2023-08-24 13:40:02][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=39416 request_id=eaf67727bd27951250c70e558f7f42e9 response_code=200
+SystemLog: [2023-08-24 13:40:03][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=40293 request_id=08ec9b752dd9f90bd33328a2ac79b3c6 response_code=200
+SystemLog: [2023-08-24 13:40:03][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=665 request_id=a9d7c21744dcc20b26d8790d6d24eda0 response_code=200
+SystemLog: [2023-08-24 13:40:04][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=50 request_id=a1f254a39c173461a09f57e3b87a6675 response_code=200
+SystemLog: [2023-08-24 13:40:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=35390 request_id=5d72bf865f73cc7a38625b5a6b24f76c response_code=200
+SystemLog: [2023-08-24 13:40:40][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=36047 request_id=5fa19ac3d5dc92d8e88bc1f7633bb8c5 response_code=200
+SystemLog: [2023-08-24 13:40:41][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=530 request_id=82badcf1aa2a3f6894ff0a1465dfd734 response_code=200
+SystemLog: [2023-08-24 13:40:41][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=107 request_id=bbdd1a44be2d1b15373235651a081cfe response_code=200
+SystemLog: [2023-08-24 13:41:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25239 request_id=ab3c53396377b52ddaaaa07bd39652eb response_code=200
+SystemLog: [2023-08-24 13:41:25][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42081 request_id=b8abd30a0091a5024ae5492e3d6eeed5 response_code=200
+SystemLog: [2023-08-24 13:41:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=13878 request_id=6f412deaf3f0b79a3ebf58f881266e06 response_code=200
+SystemLog: [2023-08-24 13:41:42][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=16776 request_id=1ec92ebc57da8c68c6ab23eb3732fdeb response_code=200
+SystemLog: [2023-08-24 13:41:49][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=23291 request_id=05b1a04c23c78f38bc25577c4d28e598 response_code=200
+SystemLog: [2023-08-24 13:41:49][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=24078 request_id=54136cc03160964559bbb32632679df8 response_code=200
+SystemLog: [2023-08-24 13:41:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25081 request_id=a5fa2463f4f9a224f5d2a0e3dbd215de response_code=200
+SystemLog: [2023-08-24 13:41:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=401 request_id=afe135e00e204486dce3e204c348b1ee response_code=200
+SystemLog: [2023-08-24 13:41:51][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=105 request_id=ed202f6c54c5631f6ff4d57aba678605 response_code=200
+SystemLog: [2023-08-24 13:42:15][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=24137 request_id=d0e3d1adf7eee375b54fa0f4a918cd7f response_code=200
+SystemLog: [2023-08-24 13:42:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=30194 request_id=bd1b87ce2d5c25a27afb5121d7e5c8c5 response_code=200
+SystemLog: [2023-08-24 13:42:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=696 request_id=a4c47f25a9abafc76ecc960426cefc42 response_code=200
+SystemLog: [2023-08-24 13:42:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=969 request_id=f0d5c59de1fb1d2582c1a28f34c8a6df response_code=200
+SystemLog: [2023-08-24 13:42:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=64 request_id=641f6a0846258d98cc47f29cdda3c8dd response_code=200
+SystemLog: [2023-08-24 13:42:56][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=34029 request_id=adee3176cef325a5a1b58c6dc7670947 response_code=200
+SystemLog: [2023-08-24 13:43:03][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=40725 request_id=782b8f5230acd92277272ee6caecbe3b response_code=200
+SystemLog: [2023-08-24 13:43:05][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42290 request_id=c5baac3c7816ed2f38c68d79f2b06a19 response_code=200
+SystemLog: [2023-08-24 13:43:05][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=376 request_id=37601799e80d0499715d56174594635a response_code=200
+SystemLog: [2023-08-24 13:43:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=68 request_id=4207022e6eef3b00c9713c9b8918a10f response_code=200
+SystemLog: [2023-08-24 13:43:43][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=37132 request_id=89fd38e554509fe28cec4a0041ab2b60 response_code=200
+SystemLog: [2023-08-24 13:44:16][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=70116 request_id=ad71ddef17754e1bab6514d7b356e32a response_code=200
+SystemLog: [2023-08-24 13:44:17][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=739 request_id=92f44c45ee560d3f7f327f0b45379628 response_code=200
+SystemLog: [2023-08-24 13:44:18][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=198 request_id=f4a98547e60f9449f223c217227ccb0c response_code=200
+SystemLog: [2023-08-24 13:45:02][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=44276 request_id=448bc1d52ba5e46964e64e50db325179 response_code=200
+SystemLog: [2023-08-24 13:45:12][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=54522 request_id=b119b66db34f9a045676490c2aaa7a1d response_code=200
+SystemLog: [2023-08-24 13:45:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=779 request_id=30e50f00d1b14c5e223bce348dc479eb response_code=200
+SystemLog: [2023-08-24 13:45:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=56 request_id=29f656ae75c12db98f79cf6c2accf299 response_code=200
+SystemLog: [2023-08-24 13:45:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25516 request_id=8b4312d462d65284ea7daadb6e763047 response_code=200
+SystemLog: [2023-08-24 13:45:55][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=41366 request_id=d2538544e9623e41f9ba05a21549a0a1 response_code=200
+SystemLog: [2023-08-24 13:46:14][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=19463 request_id=7c08cd6f9f18dfbecf7887a97352d69a response_code=200
+SystemLog: [2023-08-24 13:46:18][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=23072 request_id=8ff6fbd0cb446bd26443c5e6ed7eafb4 response_code=200
+SystemLog: [2023-08-24 13:46:19][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=24531 request_id=bc6f79ba90ad505b02b45a1e9dc46150 response_code=200
+SystemLog: [2023-08-24 13:46:26][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=31629 request_id=ced33118fa74cd09a8c022cfab8a41c7 response_code=200
+SystemLog: [2023-08-24 13:46:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=35183 request_id=01b1f1933205ee890d559a533fd110ad response_code=200
+SystemLog: [2023-08-24 13:46:31][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=398 request_id=4e4e47991ce52a278141d9bab2990014 response_code=200
+SystemLog: [2023-08-24 13:46:31][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=189 request_id=fdf454abbcb7ffd06a4d70de73d60dc4 response_code=200
+SystemLog: [2023-08-24 13:46:53][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=21740 request_id=dbaa50c2ade76c53bfb96667dc4133f4 response_code=200
+SystemLog: [2023-08-24 13:47:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=48470 request_id=227a1659d313752500f1109df0f5c003 response_code=200
+SystemLog: [2023-08-24 13:47:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=581 request_id=6f6cdb4c24c7e1f226b9a65b719b5d92 response_code=200
+SystemLog: [2023-08-24 13:47:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=340 request_id=7803f678a581c9ef9362a05a32e42c7e response_code=200
+SystemLog: [2023-08-24 13:47:47][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=26183 request_id=56dfa291d9128a2744ecfe6c63e5eed4 response_code=200
+SystemLog: [2023-08-24 13:47:51][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=30130 request_id=28de15f6d6562140b492cc1ba809e8dc response_code=200
+SystemLog: [2023-08-24 13:47:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=607 request_id=d0c7753c4cfb86f91e4be27c165a8b79 response_code=200
+SystemLog: [2023-08-24 13:47:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=37 request_id=f8465da441862d71e6a0c2ccd3d59397 response_code=200
+SystemLog: [2023-08-24 13:48:34][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42297 request_id=53ded6c06b613b96c7d682b28d7f5321 response_code=200
+SystemLog: [2023-08-24 13:48:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=52735 request_id=a57c351866388bc9bfdbbcdae4fc2ef9 response_code=200
+SystemLog: [2023-08-24 13:48:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=470 request_id=db541a14d856eb242eaf0ff9ccb8ae10 response_code=200
+SystemLog: [2023-08-24 13:48:46][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=167 request_id=30dce9b1094a2600b67dca84c04d4aa9 response_code=200
+SystemLog: [2023-08-24 13:49:14][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=27792 request_id=d16b956219c705eee95aa02a191164fc response_code=200
+SystemLog: [2023-08-24 13:49:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=35890 request_id=366d0e5212d7a8d5a999df5c041da49e response_code=200
+SystemLog: [2023-08-24 13:49:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=605 request_id=bd4ea2fdbf94c7f21d968c13e4672384 response_code=200
+SystemLog: [2023-08-24 13:49:23][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=643 request_id=21543c6d6d1cf0efe7df1705c5e5b71c response_code=200
+SystemLog: [2023-08-24 13:49:23][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=96 request_id=0aebc7dbbdc2f0a60a4ee9668f5445fd response_code=200
+SystemLog: [2023-08-24 13:49:47][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=23752 request_id=0f4cd6108a61d6d63fdb40454bd3e702 response_code=200
+SystemLog: [2023-08-24 13:49:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=26766 request_id=b3a4c9e5568f20b0c7d03fd99d87cabe response_code=200
+SystemLog: [2023-08-24 13:49:55][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=31759 request_id=ff7f207a588d3ae54b21800548c2fcd5 response_code=200
+SystemLog: [2023-08-24 13:50:01][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=37669 request_id=333850f2b024dfb741b6ebc002078db0 response_code=200
+SystemLog: [2023-08-24 13:50:14][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=12924 request_id=17bb0fc1be545fde1ec907bcf4d56353 response_code=200
+SystemLog: [2023-08-24 13:50:15][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=14722 request_id=0ef49becbf01a44abd0ba0974fc0d5fc response_code=200
+SystemLog: [2023-08-24 13:50:19][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=17433 request_id=f30e82e75884e673db4cbe5e134e2297 response_code=200
+SystemLog: [2023-08-24 13:50:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=21151 request_id=ae08f11f805cf32cede21e00243ca2a7 response_code=200
+SystemLog: [2023-08-24 13:50:54][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=52883 request_id=66cbfd506dba6d9121401b99e60d7ed3 response_code=200
+SystemLog: [2023-08-24 13:50:54][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=542 request_id=eff7d8430e3cb227ede0dd4b227d39e3 response_code=200
+SystemLog: [2023-08-24 13:50:55][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=1204 request_id=92bd75c2133d2db0ea0b6da3f3959d35 response_code=200
+SystemLog: [2023-08-24 13:51:58][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=62477 request_id=a919df3b47fddcd280ab6a0b7b703181 response_code=200
+SystemLog: [2023-08-24 13:52:07][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=71415 request_id=5ecd8bd218ef7c591fb87fd3004e6c1d response_code=200
+SystemLog: [2023-08-24 13:52:08][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=568 request_id=696245825ff795ef1a32cefe9b4d99cd response_code=200
+SystemLog: [2023-08-24 13:52:08][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=103 request_id=165fcafc28b41630cdf443646daa8ac1 response_code=200
+SystemLog: [2023-08-24 13:52:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=36459 request_id=f6562d19270e976d8e6f42e058d06b52 response_code=200
+SystemLog: [2023-08-24 13:53:03][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=54662 request_id=788cfc51cbdaf5139933e00b85e46152 response_code=200
+SystemLog: [2023-08-24 13:53:04][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=543 request_id=eae67fc297aed90a42ee8acc36a3bca1 response_code=200
+SystemLog: [2023-08-24 13:53:04][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=330 request_id=66e9950afa924c6200b9f18c2062d9ac response_code=200
+SystemLog: [2023-08-24 13:53:37][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=32627 request_id=83d40b2b16b07ce738ac450645a62daa response_code=200
+SystemLog: [2023-08-24 13:53:40][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=35822 request_id=9e9d75bdb69acd2eb3288287b23f556d response_code=200
+SystemLog: [2023-08-24 13:53:41][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=280 request_id=e2e36d9bde97fa296b1f7813d471bc70 response_code=200
+SystemLog: [2023-08-24 13:53:41][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=166 request_id=f9fd24220a710a9ac84fc3f295ee1af1 response_code=200
+SystemLog: [2023-08-24 13:54:14][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=33128 request_id=0999477ba374c1708dbbeed2c0990ce7 response_code=200
+SystemLog: [2023-08-24 13:54:49][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=67663 request_id=b3823db916e8bde85c2d090aff773331 response_code=200
+SystemLog: [2023-08-24 13:54:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=828 request_id=70238253230af8dbf7ae1e9c7a296eaa response_code=200
+SystemLog: [2023-08-24 13:54:50][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=187 request_id=1d0fcd2a645cc83bf633a81f5b63368b response_code=200
+SystemLog: [2023-08-24 13:55:27][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=36612 request_id=269ad0bd02231cceef45f3698621f1c4 response_code=200
+SystemLog: [2023-08-24 13:55:47][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=56746 request_id=a78f67e3be0f43925124d62afed979e5 response_code=200
+SystemLog: [2023-08-24 13:56:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=18615 request_id=217ca42db9a025456df5ffc81c3ffc5c response_code=200
+SystemLog: [2023-08-24 13:56:09][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=21647 request_id=bc5bded7cb88f6278364841bba048872 response_code=200
+SystemLog: [2023-08-24 13:56:09][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=21901 request_id=dc4f8367c2ab951cf059c7a764ec8e99 response_code=200
+SystemLog: [2023-08-24 13:56:17][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=30373 request_id=8773383cd7138f85e0a07c227e56c6bd response_code=200
+SystemLog: [2023-08-24 13:56:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=32623 request_id=d6cb6233869de5bc9b6690a474182bf2 response_code=200
+SystemLog: [2023-08-24 13:56:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=502 request_id=0b56b0d9be5f502bf501064fcfbd700f response_code=200
+SystemLog: [2023-08-24 13:56:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=455 request_id=0db19540cb0223f58e5de87899563dde response_code=200
+SystemLog: [2023-08-24 13:56:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=31223 request_id=7ed3f34db626e8b6975e29e414402393 response_code=200
+SystemLog: [2023-08-24 13:57:12][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=51505 request_id=9be73dbe8b6816ad108278fcc31efe10 response_code=200
+SystemLog: [2023-08-24 13:57:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=582 request_id=c83f8dd5dfe1d2e8b23a7675eb6dda64 response_code=200
+SystemLog: [2023-08-24 13:57:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=89 request_id=d7eb068a6ccbd53b442cd78629ba8985 response_code=200
+SystemLog: [2023-08-24 13:58:01][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=47126 request_id=413955b62b493161d8c13d5613ed4c95 response_code=200
+SystemLog: [2023-08-24 13:58:01][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=47714 request_id=681f17c54b0f9a6d76281954d3ca9a2f response_code=200
+SystemLog: [2023-08-24 13:58:02][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=357 request_id=342abf1947bd11e0bb4e65b0e64661ff response_code=200
+SystemLog: [2023-08-24 13:58:02][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=317 request_id=d90618d3e43742a952c1df0d54420309 response_code=200
+SystemLog: [2023-08-24 13:58:56][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=53627 request_id=8398f31343a039dd9db5c6c75661b81f response_code=200
+SystemLog: [2023-08-24 13:59:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=63828 request_id=418a3432593da25d11961bc533ab7dbc response_code=200
+SystemLog: [2023-08-24 13:59:07][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=508 request_id=790abaf341b030344ad3644fe327b535 response_code=200
+SystemLog: [2023-08-24 13:59:07][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=35 request_id=6985305a2ee33fbb9ae013a587b340fb response_code=200
+SystemLog: [2023-08-24 13:59:43][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=36196 request_id=df538fcbf41ebe231ed62a008f57e46f response_code=200
+SystemLog: [2023-08-24 13:59:59][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=51472 request_id=069ab4d00cc00ba9b1a69579168d290f response_code=200
+SystemLog: [2023-08-24 13:59:59][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=280 request_id=88a0816e71fa8cb7d2e2e3eebe543886 response_code=200
+SystemLog: [2023-08-24 13:59:59][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=83 request_id=96c01eece17ff31e561d496c12635e24 response_code=200
+SystemLog: [2023-08-24 14:00:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=29579 request_id=52e0fe70e18984e0130de7a19786a67a response_code=200
+SystemLog: [2023-08-24 14:00:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=45884 request_id=c41b8db14edd5d866f79332b36ca65bd response_code=200
+SystemLog: [2023-08-24 14:01:01][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=15477 request_id=c8a22fb6d9119f6037d465404d3caaf8 response_code=200
+SystemLog: [2023-08-24 14:01:05][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=19515 request_id=5b3aa2b26979016a119bc97a852f4b32 response_code=200
+SystemLog: [2023-08-24 14:01:09][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=23882 request_id=d44063b38fa10cb5b2c9af37482b5e2b response_code=200
+SystemLog: [2023-08-24 14:01:10][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=24152 request_id=61235ca51641ee8e0a3fd73d89f1cf61 response_code=200
+SystemLog: [2023-08-24 14:01:28][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42685 request_id=68c40274e93c50f0332b84b881899ce7 response_code=200
+SystemLog: [2023-08-24 14:01:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=384 request_id=26d489cbb1b34b4470d269b380d7c4a3 response_code=200
+SystemLog: [2023-08-24 14:01:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=132 request_id=8324d6a76f6a7c2c94fcaa1c05543c97 response_code=200
+SystemLog: [2023-08-24 14:02:21][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=51826 request_id=4deedc01ca3ef6243586bc8ad2e10181 response_code=200
+SystemLog: [2023-08-24 14:02:33][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=63550 request_id=ed2bceebddf030e9138e2287b6cdce54 response_code=200
+SystemLog: [2023-08-24 14:02:33][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=431 request_id=4da697e67cb9fc66a3bfbc53d3a3649d response_code=200
+SystemLog: [2023-08-24 14:02:34][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=49 request_id=31b0040f10dacab8adea270745fb6e6e response_code=200
+SystemLog: [2023-08-24 14:03:24][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=49843 request_id=7502f694cada364ff191b9ec16d7c605 response_code=200
+SystemLog: [2023-08-24 14:03:29][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=55497 request_id=3c2e64a5cd33ae2e41771d1febf27515 response_code=200
+SystemLog: [2023-08-24 14:03:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=676 request_id=1f366b9fe9e6f6adfea7e75147ad79fb response_code=200
+SystemLog: [2023-08-24 14:03:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=360 request_id=268ece4f9281f8cdf67f198a67e5a172 response_code=200
+SystemLog: [2023-08-24 14:03:55][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=24399 request_id=847130ad0cd3d3242c8d892d201b0b4c response_code=200
+SystemLog: [2023-08-24 14:03:56][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25738 request_id=8a06eba227d04156a41801bcfe27de5d response_code=200
+SystemLog: [2023-08-24 14:03:57][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=489 request_id=65ebfc9c1a2e9ff943e316c9a656212f response_code=200
+SystemLog: [2023-08-24 14:03:57][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=55 request_id=2a62dc7dae3acb79c311f091284d061e response_code=200
+SystemLog: [2023-08-24 14:04:26][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=28285 request_id=1f9d1f591255c05a8e8a0d589fb6995c response_code=200
+SystemLog: [2023-08-24 14:04:37][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=39512 request_id=dc3fcb2beca11494a227d73e3480387a response_code=200
+SystemLog: [2023-08-24 14:04:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=653 request_id=a86141ad24160bfb98a686b1953cc61d response_code=200
+SystemLog: [2023-08-24 14:04:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=125 request_id=3230a3b2abf9ab59a1abfd976827ac8f response_code=200
+SystemLog: [2023-08-24 14:05:13][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=34960 request_id=04181d92c303c99b8ad67dcba061ef9b response_code=200
+SystemLog: [2023-08-24 14:05:20][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=41753 request_id=60306f6c7cceccc525a63a29467e4f4e response_code=200
+SystemLog: [2023-08-24 14:05:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=17850 request_id=8da0d0a30fae1ca947b42b974d4b9d75 response_code=200
+SystemLog: [2023-08-24 14:05:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=25065 request_id=ca589dbff996b38a69e481c0f4edeb08 response_code=200
+SystemLog: [2023-08-24 14:05:47][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=27188 request_id=a2caebf2a8a3a06243ec7bf688cbc92a response_code=200
+SystemLog: [2023-08-24 14:05:52][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=30665 request_id=50b8ed06ee6299b07531f0f6d473e979 response_code=200
+SystemLog: [2023-08-24 14:05:53][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=32562 request_id=508d2948bda8c05b0dfe4685528f1a3e response_code=200
+SystemLog: [2023-08-24 14:05:53][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=357 request_id=d4a95505708eb70b669364ca94857c1d response_code=200
+SystemLog: [2023-08-24 14:05:56][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=78 request_id=604d99b860d2187e737dd2cb9b9227b8 response_code=200
+SystemLog: [2023-08-24 14:06:30][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=33569 request_id=d86f521e1471039c11cea1621ae1435a response_code=200
+SystemLog: [2023-08-24 14:06:38][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42132 request_id=fe0196b14458690d76e211209e2e5833 response_code=200
+SystemLog: [2023-08-24 14:06:40][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=1119 request_id=e977ab752c0903adca4f06ab0b167d27 response_code=200
+SystemLog: [2023-08-24 14:06:40][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=66 request_id=34e0c2da42dd6eb3b2b0ecaf895b6b8a response_code=200
+SystemLog: [2023-08-24 14:07:08][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=28452 request_id=f6142d42125ac9273d269a3bd0e5232d response_code=200
+SystemLog: [2023-08-24 14:07:37][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=56482 request_id=7b3aedae02efb271fdd75cd5212617d5 response_code=200
+SystemLog: [2023-08-24 14:07:37][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=380 request_id=bdf3ab2be4048bba0d66bf2dd76980b6 response_code=200
+SystemLog: [2023-08-24 14:07:39][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=57 request_id=fb2f789e17af0b6ba7331795f9ae6706 response_code=200
+SystemLog: [2023-08-24 14:08:22][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=42956 request_id=b80b59cb69fc98d33e0e5625c7e3e140 response_code=200
+SystemLog: [2023-08-24 14:09:04][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=84874 request_id=ecb551036dd55561d1bc2a83bbf50da4 response_code=200
+SystemLog: [2023-08-24 14:09:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=1617 request_id=dcfe6deb37cf8092bb0b0d6cb580bbee response_code=200
+SystemLog: [2023-08-24 14:09:06][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=102 request_id=4f52212bc2d93618a432905649779ff2 response_code=200
+SystemLog: [2023-08-24 14:09:44][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=38046 request_id=4dd6886f11fc8d83354f5e5653dfa0b6 response_code=200
+SystemLog: [2023-08-24 14:09:45][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=39200 request_id=254db21f1279d74877c2fd085a35009a response_code=200
+SystemLog: [2023-08-24 14:09:46][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=527 request_id=949a6687af5e195c03ca5cf09436fea4 response_code=200
+SystemLog: [2023-08-24 14:09:46][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/embeddings processing_ms=53 request_id=fb834facbdea743697d75e345bd33313 response_code=200
+SystemLog: [2023-08-24 14:10:31][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=45368 request_id=4381d8b0bea377f98ae99134ceacebcf response_code=200
+SystemLog: [2023-08-24 14:10:59][openai][INFO] - message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=72944 request_id=a431846717a1459ee5165571af509ee1 response_code=200
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...
+5 retry left...

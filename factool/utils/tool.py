@@ -34,7 +34,11 @@ class local_search():
         #self.data = json.load(open(self.data_link, 'r'))
         with jsonlines.open(self.data_link) as reader:
             for obj in reader:
-                self.data.append(obj['text'])
+                try:
+                    # self.data.append(os.path.splitext(self.data_link)[0].rsplit('/',1)[-1]+obj['text'])
+                    self.data.append(obj['text'])
+                except TypeError as e: # content in data_link is a list if strings
+                    self.data.append(obj)
 
     def load_embedding_by_link(self):
         self.embedding = []
@@ -51,11 +55,13 @@ class local_search():
         self.embedding = list(zip(self.data, embedding))
         self.save_embeddings()
 
-    async def search(self, query):
+    async def search(self, query, num = None):
         query_embed = await self.openai_embed.create_embedding(query)
-
         faiss = FAISS.from_embeddings(self.embedding, embedding=OpenAIEmbeddings(model="text-embedding-ada-002"))
-        related_docs = faiss.similarity_search_by_vector(query_embed, k=self.snippet_cnt)
+        if(num is not None):
+            related_docs = faiss.similarity_search_by_vector(query_embed, k=num)
+        else:
+            related_docs = faiss.similarity_search_by_vector(query_embed, k=self.snippet_cnt)
         related_docs = [{"content":doc.page_content,"source":"local"} for doc in related_docs]
         return related_docs
 
@@ -71,6 +77,16 @@ class local_search():
         snippets = await asyncio.gather(*[self.search(query) for query in flattened_queries])
         snippets_split = [snippets[i] + snippets[i+1] for i in range(0, len(snippets), 2)]
         return snippets_split
+
+    def get_laws_from_index(self, index_list):
+        result = []
+        for index in index_list:
+            try:
+                result.append(self.embedding[index][0])
+            except IndexError as e:
+                result.append("不存在第{}条法律".format(index+1))
+        return result
+        
 
 
 

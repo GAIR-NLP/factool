@@ -212,7 +212,37 @@ law_counsel_qa:
       "corrected_claim": "None if the claim is factual; otherwise, write the corrected claim.",
       "factuality": "True if the claim is factual, False otherwise."
 
+finance_counsel_qa:
+  system: |-
+    You are a brilliant assistant.
+  user_zero_shot_CoT: |-
+    You are given a claim. Your task is to identify whether there are any factual errors within the claim.
+    The response must be a dictionary with 4 keys - "reasoning", "error", "corrected_claim", and "factuality", which correspond to the reasoning about whether the claim is factual, the factual error present in the claim (if any), the corrected claim (if needed), and whether the claim is factual or not (Boolean - True or False).
+    The following is the given claim - 
+    [claim]: {claim}
+    You MUST only respond in the format as described below. DO NOT RESPOND WITH ANYTHING ELSE. ADDING ANY OTHER EXTRA NOTES THAT VIOLATE THE RESPONSE FORMAT IS BANNED. START YOUR RESPONSE WITH '{{'.
+    [response format]: 
+    {{
+      "reasoning": "Reason about whether the claim is factual. Think step by step.",
+      "error": "None if the claim is factual; otherwise, describe the error.",
+      "corrected_claim": "None if the claim is factual; otherwise, write the corrected claim.",
+      "factuality": "True if the claim is factual, False otherwise."
 
+med_counsel_qa:
+  system: |-
+    You are a brilliant assistant.
+  user_zero_shot_CoT: |-
+    You are given a claim. Your task is to identify whether there are any factual errors within the claim.
+    The response must be a dictionary with 4 keys - "reasoning", "error", "corrected_claim", and "factuality", which correspond to the reasoning about whether the claim is factual, the factual error present in the claim (if any), the corrected claim (if needed), and whether the claim is factual or not (Boolean - True or False).
+    The following is the given claim - 
+    [claim]: {claim}
+    You MUST only respond in the format as described below. DO NOT RESPOND WITH ANYTHING ELSE. ADDING ANY OTHER EXTRA NOTES THAT VIOLATE THE RESPONSE FORMAT IS BANNED. START YOUR RESPONSE WITH '{{'.
+    [response format]: 
+    {{
+      "reasoning": "Reason about whether the claim is factual. Think step by step.",
+      "error": "None if the claim is factual; otherwise, describe the error.",
+      "corrected_claim": "None if the claim is factual; otherwise, write the corrected claim.",
+      "factuality": "True if the claim is factual, False otherwise."
 
 
 

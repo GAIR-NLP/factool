@@ -109,7 +109,7 @@ class Factool():
                 batch_results = asyncio.run(
                     med_counsel_qa_pipeline(
                         self.foundation_model,3,batch[0].get("data_link"),batch[0].get("embedding_link")
-                    ).run_with_tool_api_call(
+                    ).run_with_tool_api_call_self_check(
                         [sample['prompt'] for sample in batch],
                         [sample['response'] for sample in batch],
                     )

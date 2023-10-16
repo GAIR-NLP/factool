@@ -64,7 +64,6 @@ class local_search():
             related_docs = faiss.similarity_search_by_vector(query_embed, k=self.snippet_cnt)
         related_docs = [{"content":doc.page_content,"source":"local"} for doc in related_docs]
         return related_docs
-
     
     async def run(self, queries):
         flattened_queries = []
@@ -86,10 +85,4 @@ class local_search():
             except IndexError as e:
                 result.append("不存在第{}条法律".format(index+1))
         return result
-        
-
-
-
-
-
-
+    

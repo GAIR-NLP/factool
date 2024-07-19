@@ -6,6 +6,7 @@
 [**Citation**](https://github.com/GAIR-NLP/factool#citation) |
 
 This repository contains the source code and plugin configuration for our [paper](https://arxiv.org/abs/2307.13528).
+This repository also contains the resources for [Halu-J](https://arxiv.org/abs/2407.12943), which introduces an open-source model for critique-based hallucination judge.
 
 [Project Website](https://ethanc111.github.io/factool_website/)
 

@@ -1,0 +1,20 @@
+Given a claim, a set of evidence and a critique, your task is to reformat the critique.
+
+CLAIM: {claim}
+EVIDENCES: {evidence}
+CRITIQUE: {critique}
+
+The format of expected critique is as follows:
+
+To verify the factuality of the claim, the reasoning is as follows.
+[Completely Irrelevant Evidence]
+A discussion and analysis of completely irrelevant evidence
+[Partial Irrelevant Evidence]
+A discussion and analysis of partial irrelevant evidence. The evidence must be analyzed case by case. You should point out the relevant and irrelevant information in the evidence respectively.
+[Highly related Evidence]
+A discussion and analysis of highly related evidence. The evidence must be analyzed case by case. You should dive into the details and discuss the relationship between the evidence and the claim.
+[Conclusion]
+Aggregate the analysis above and conclude whether the claim is true, false, or neutral
+
+Your task is only reformat the critique. Don't change any reasoning or information in the original critique.
+Output the reformatted critique directly.

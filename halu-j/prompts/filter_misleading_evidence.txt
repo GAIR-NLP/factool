@@ -1,0 +1,11 @@
+I'll provide you with a claim and associated evidence. At the same time, you will be informed of the correctness of this claim. Your task is to classify whether the evidence changes the correctness of the claim. If the correctness of the claim is neutral, it means either the supporting or the opposing evidence should be considered changing the correctness of the claim while the evidence neither supports or refutes the claim should be considered maintaining the correctness of the claim.
+
+[claim]: {claim}
+[label]: {label}
+[evidence]: {evidence}
+
+Here is your output format(a python dictionary):
+[{{
+    "explanation": the reason of your classification,
+    "classification": True or False. True if the evidence maintains the correctness of the claim and False if the evidence changes the correctness of the claim
+}}]

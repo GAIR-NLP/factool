@@ -1,0 +1,18 @@
+I'll provide you with a claim and an associated evidence snippet. At the same time, you will be informed of the correctness of this claim. Your task is to output 3 other pieces of evidence related to the body of the claim, which has the following requirements:
+1. Do not contradict the information in the existing evidence
+2. The length of the generated evidence should be close to the length of the provided evidence, which is often  7-8 sentences
+3. The evidence should not change the correctness of the claim, which is true. However, the evidence needs to contain confusing information to mislead the reader into believing that the claim is {opposite_label} (which is actually {label})
+4. The misleading information needs to be deceptive enough.
+5. Try to vary the pieces of evidence you generate and make them have different misleading points.
+
+[claim]: {claim}
+[evidence]: {evidence}
+[correctness]: {label}
+
+Here is your output format(a list of python dictionaries with the length of 3):
+[{{
+    "evidence": the evidence you generate,
+    "explanation": What's the misleading information in the evidence(briefly)
+}},...]
+
+Respond in the correct format directly.

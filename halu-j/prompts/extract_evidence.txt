@@ -1,0 +1,24 @@
+I'll provide you with a set of evidence and a critique based on provided evidence.
+Your task is to classify evidence into three categories which are [Completely Irrelevant Evidence], [Partial Irrelevant Evidence], and [Highly related Evidence].
+You should strictly stick to the classification statements of the critique and don't change its meaning.
+Evidence corresponding to the content in [Completely Irrelevant Evidence] should be matched to "Completely Irrelevant Evidence" category.
+Evidence corresponding to the content in [Partial Irrelevant Evidence] should be matched to "Partial Irrelevant Evidence" category.
+Evidence corresponding to the content in [Highly related Evidence] should be matched to "Highly related Evidence" category.
+If there is evidence doen't correspond to any content in the critique, it should be matched to "Unmentioned" category.
+
+Here is the evidence:
+
+{evidence}
+
+Here is the critique:
+
+{critique}
+
+Respond in a python dictionary with the following format:
+{{
+    "Completely Irrelevant Evidence":[evidence_number, evidence_number, ...],
+    "Partial Irrelevant Evidence":[evidence_number, evidence_number, ...],
+    "Highly related Evidence":[evidence_number, evidence_number, ...],
+    "Unmentioned Evidence":[evidence_number, evidence_number, ...]
+}}
+Output in correct format directly.

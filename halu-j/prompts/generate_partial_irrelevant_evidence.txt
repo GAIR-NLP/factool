@@ -1,0 +1,12 @@
+I'll provide you with a claim and an associated evidence snippet. At the same time, you will be informed of the correctness of this claim. Your task is to output 4 other pieces of evidence related to the body of the claim, which has the following requirements:
+1. The subject is the same as the subject in the claim
+2. Do not contradict the information in the existing evidence
+3. Don't support or oppose claim. This evidence should be a useless piece of information to judge the correctness of the claim
+4. The length of the generated evidence should be close to the length of the provided evidence which is often  7-8 sentences
+[claim]: {claim}
+[evidence]: {evidence}
+[correctness]: {label}
+
+Here is your output format(a list of string with the length of 4):
+["evidence1", "evidence2", "evidence3", "evidence4"]
+Respond in the correct format directly.

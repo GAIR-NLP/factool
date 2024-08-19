@@ -1,0 +1,32 @@
+I'm now training a large language model for claim verification. I expect it to generate high-quality critique given claim and evidence. Your task is to help me produce training datas.
+
+Here is the given prompt I used for training:
+[prompt used for training] 
+You are given a claim. Your task is to identify whether there are any factual errors within the claim based on the given evidence.
+The response should be a python dictionary with two keys - "reasoning", "factuality", which correspond to the reasoning and whether the given claim is factual or not (string - True, False or Neutral)
+The following is the given claim
+{claim}
+The following is the provided evidences:
+{formatted_evidences}
+
+Now you'll get additional key information to help generate the 'golden' response expected.
+{additional_info}
+Most importantly, the factuality of the claim is {label}. Stick to this label when generating response.
+
+Your task is to use the above additional information to output the 'golden' response as training datas, while making sure that you do not show that you got the extra information.
+
+A 'golden' response requires the following requirements:
+1. Be specific and complete in your response
+2. Your response should start with an short assertion about the factuality of the claim like the factuality of the claim xxx is true / false / neutral
+3. The response needs to go through each piece of evidence and analyze its relationship to the claim, which means you should analyze from the first evidence one by one
+4. For evidence that is completely unrelated, you can briefly analyze it and point out that it is not related to the claim
+5. For evidence that is basically unrelated to the content, you can briefly analyze and point out the reason like although it has the same subject as the claim, the content has nothing to do with the claim
+6. For evidence with highly relevant content, give a reasonable analysis of whether the evidence support or oppose the claim, or neither support nor oppose it (take care to refer to the additional information I have provided you above, and do not show that you have this information. e.g. Be careful when using word like 'mislead'. The so-called misleading evidence is systhesized by me to mislead the chatbots. However, in real scenario, you should just regard it as a highly related but confusing evidence. You can not regard it as a wrong or misleading evidence)
+7. When you go through the misleading evidence (which in real scenarios is highly related and confusing evidence) with explanation, you can consider include the information and discussion in the explanation in your analysis. You can also demonstrate the relevance between the claim and the evidence first.
+8. At the end of the response, there needs to be a summary, which synthesizes the above analysis and derives the factuality of the claim
+
+You should only respond in format as described below. DO NOT RETURN ANYTHING ELSE. START YOUR RESPONSE WITH '{{'.
+{{
+    "reasoning": "Why is the given claim factual non-factual or neutral? You must provide specific evidences to support your decision.",
+    "factuality": "True" if the given claim is totally supported by the evidences, "False" if the given claim contradicts the evidences in some way, "Neutral" if evidence neither supports nor refutes the claim.
+}}

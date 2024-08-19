@@ -6,6 +6,7 @@ This folder contains the resources for [Halu-J](https://arxiv.org/abs/2407.12943
 - [Introduction](#Introduction)
 - [Evaluation](#Evaluation)
 - [Data](#Data)
+- [Citation](#Citation)
 
 ## Introduction
 We introduce HALU-J, an open-source, critique-based hallucination detection model with 7 billion parameters capable of providing fine-grained critiques and filtering out unrelated information during hallucination detection. It is featured with:
@@ -43,5 +44,16 @@ Each instance is a dictionary following the format below.
     "partial_irrelevant_evidence_x": a synthetic partial irrelevant evidence,
     "misled_evidence_x": a synthetic misleading evidence,
     "explanation_x"：the explanation of the corresonding misleading evidence
+}
+```
+
+## Citation
+Please cite our paper if it is helpful to you.
+```
+@article{wang2024halu,
+  title={Halu-J: Critique-Based Hallucination Judge},
+  author={Wang, Binjie and Chern, Steffi and Chern, Ethan and Liu, Pengfei},
+  journal={arXiv preprint arXiv:2407.12943},
+  year={2024}
 }
 ```
